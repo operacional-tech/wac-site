@@ -46,10 +46,10 @@ export default function Home() {
           ))}
         </svg>
 
-        {/* Logo integrada no centro da navbar */}
+        {/* Logo integrada no centro da navbar — mask forte para fundir 100% */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <Image src="/logo-wac.jpg" alt="" width={120} height={120} priority className="opacity-70"
-            style={{ mask: 'radial-gradient(ellipse 70% 70% at center, black 35%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 70% 70% at center, black 35%, transparent 100%)' }} />
+          <Image src="/logo-wac.jpg" alt="" width={220} height={220} priority
+            style={{ mask: 'radial-gradient(circle at center, black 20%, transparent 65%)', WebkitMask: 'radial-gradient(circle at center, black 20%, transparent 65%)' }} />
         </div>
 
         <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-10 flex items-center">
