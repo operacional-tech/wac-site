@@ -52,20 +52,20 @@ export default function Home() {
             style={{ mask: 'radial-gradient(circle at center, black 20%, transparent 65%)', WebkitMask: 'radial-gradient(circle at center, black 20%, transparent 65%)' }} />
         </div>
 
-        <div className="relative z-10 h-full max-w-5xl mx-auto px-6 flex items-center justify-center gap-10">
+        <div className="relative z-10 h-full max-w-6xl mx-auto px-6 flex items-center justify-center gap-16">
 
           {/* Links esquerda */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-10">
             <a href="#servicos" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Serviços</a>
             <a href="#luca" className="text-white/70 hover:text-white text-base font-semibold transition-colors">LUCA</a>
             <a href="#contato" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Contato</a>
           </div>
 
-          {/* Espaço para logo no centro (a logo está posicionada absolute) */}
-          <div className="w-32" />
+          {/* Espaço para logo no centro */}
+          <div className="w-44" />
 
           {/* Links direita */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-10">
             <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Portal</a>
             <a href="https://luca.wacapoio.com.br/login"
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl text-base font-bold transition-all">
@@ -79,7 +79,7 @@ export default function Home() {
       {/* HERO — abaixo da navbar                                        */}
       {/* ════════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden" style={{ background: '#1a3a8f' }}>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
 
           <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Contabilidade · Fiscal · Pessoal · Consultoria</p>
 
