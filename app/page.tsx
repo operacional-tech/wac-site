@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative" style={{ background: '#1a3a8f' }}>
       {/* Estrelas e constelações — fundo de todo o site */}
-      <div className="fixed inset-0 pointer-events-none z-0">
+      <div className="absolute inset-0 pointer-events-none z-0" style={{ height: '100%' }}>
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           {/* Estrelas */}
           {[[1,5],[3,15],[5,28],[7,42],[9,55],[11,68],[13,82],[15,95],
@@ -55,7 +55,7 @@ export default function Home() {
             [2,48],[8,72],[14,35],[19,88],[25,18],[31,62],[36,8],
             [42,52],[47,78],[53,28],[59,95],[64,15],[70,48],[75,68],
             [81,25],[87,58],[92,42],[98,85]].map(([x,y], i) => (
-            <circle key={`gs${i}`} cx={`${x}%`} cy={`${y}%`} r={0.6 + (i % 4) * 0.4} fill="white" opacity={0.08 + (i % 6) * 0.03} />
+            <circle key={`gs${i}`} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 4) * 0.6} fill="white" opacity={0.15 + (i % 5) * 0.06} />
           ))}
           {/* Constelações */}
           {[[1,5,3,15],[3,15,5,28],[5,28,9,55],[13,82,15,95],[18,8,20,22],[20,22,24,52],
@@ -65,7 +65,7 @@ export default function Home() {
             [2,48,8,72],[14,35,19,88],[25,18,31,62],
             [42,52,47,78],[53,28,59,95],[64,15,70,48],
             [75,68,81,25],[87,58,92,42]].map(([x1,y1,x2,y2], i) => (
-            <line key={`gl${i}`} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.4" opacity="0.04" />
+            <line key={`gl${i}`} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.5" opacity="0.08" />
           ))}
         </svg>
       </div>
