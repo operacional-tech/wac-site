@@ -164,78 +164,175 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Mock do sistema */}
-          <div className="max-w-3xl mx-auto mb-14">
-            <div className="bg-white/[0.03] backdrop-blur-sm rounded-3xl p-7 border border-white/[0.08] shadow-2xl">
-              <div className="flex items-center gap-2 mb-5">
-                <div className="w-3 h-3 rounded-full bg-red-500/40"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/40"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/40"></div>
-                <span className="text-white/20 text-xs ml-3 font-mono">luca.wacapoio.com.br</span>
-              </div>
-              <div className="bg-white/5 rounded-xl p-5 mb-4">
-                <div className="flex gap-2 mb-4">
-                  {['Painel Anual', 'Pendências', 'Particularidades', 'Extratos'].map((t, i) => (
-                    <span key={i} className={`text-[11px] px-3 py-1.5 rounded-lg font-medium ${i === 0 ? 'bg-white/10 text-white' : 'text-white/25'}`}>{t}</span>
+          {/* ── ÁREA DO OPERADOR ─────────────────────────────────── */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full">Área do Operador</span>
+                <h3 className="text-2xl md:text-3xl font-black text-white mt-4 mb-4">Controle pleno de cada carteira</h3>
+                <p className="text-white/40 leading-relaxed mb-6">O mesmo painel que a WAC usa no dia a dia. Todas as funcionalidades para operar com velocidade e precisão.</p>
+                <div className="space-y-3">
+                  {[
+                    { icon: '🎯', text: 'Painel Anual — status de cada empresa, mês a mês, com cores e filtros' },
+                    { icon: '📝', text: 'Evoluções — registro de cada ação com histórico completo' },
+                    { icon: '⚠️', text: 'Pendências — controle do que falta, com prazo e responsável' },
+                    { icon: '📑', text: 'Extratos — importação automática de extratos bancários (PDF)' },
+                    { icon: '💬', text: 'Particularidades — anotações por empresa com anexos' },
+                    { icon: '👤', text: 'Contatos — sócios, financeiro, responsáveis de cada empresa' },
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-lg shrink-0">{f.icon}</span>
+                      <p className="text-sm text-white/50">{f.text}</p>
+                    </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-12 gap-1.5">
-                  {Array.from({ length: 72 }).map((_, i) => {
-                    const colors = ['bg-green-500/50', 'bg-yellow-500/50', 'bg-purple-500/50', 'bg-pink-500/40', 'bg-white/[0.03]'];
-                    const c = i % 7 === 0 ? 0 : i % 5 === 0 ? 1 : i % 11 === 0 ? 2 : i % 13 === 0 ? 3 : 4;
-                    return <div key={i} className={`h-4 rounded ${colors[c]}`} />;
+              </div>
+              {/* Mock visual — Painel Anual */}
+              <div className="bg-white/[0.03] rounded-2xl p-5 border border-white/[0.08]">
+                <div className="flex gap-2 mb-3">
+                  {['Painel Anual', 'Evoluções', 'Pendências', 'Extratos', 'Contato'].map((t, i) => (
+                    <span key={i} className={`text-[10px] px-2.5 py-1 rounded-lg ${i === 0 ? 'bg-white/10 text-white font-medium' : 'text-white/20'}`}>{t}</span>
+                  ))}
+                </div>
+                <div className="flex gap-2 mb-3">
+                  {['2025', '2026'].map((a, i) => (
+                    <span key={i} className={`text-[10px] px-3 py-1 rounded-lg font-bold ${i === 1 ? 'bg-white/15 text-white' : 'text-white/30'}`}>{a}</span>
+                  ))}
+                </div>
+                <div className="grid grid-cols-12 gap-1">
+                  {Array.from({ length: 96 }).map((_, i) => {
+                    const c = ['bg-green-500/60','bg-yellow-500/60','bg-purple-500/60','bg-pink-500/50','bg-white/[0.04]'];
+                    return <div key={i} className={`h-3.5 rounded-sm ${c[i%7===0?0:i%5===0?1:i%9===0?2:i%13===0?3:4]}`} />;
                   })}
                 </div>
+                <div className="grid grid-cols-5 gap-2 mt-3">
+                  {[{l:'Zerado',v:'45',c:'text-green-400'},{l:'Lançado',v:'28',c:'text-yellow-400'},{l:'Fazendo',v:'12',c:'text-purple-400'},{l:'S/ Zeram.',v:'3',c:'text-pink-400'},{l:'Sem status',v:'8',c:'text-gray-400'}].map((k,i) => (
+                    <div key={i} className="bg-white/5 rounded-lg p-2 text-center">
+                      <p className="text-white/25 text-[8px] uppercase">{k.l}</p>
+                      <p className={`font-bold text-sm ${k.c}`}>{k.v}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="grid grid-cols-4 gap-2">
-                {[
-                  { label: 'Zerado', val: '45', color: 'text-green-400' },
-                  { label: 'Lançado', val: '28', color: 'text-yellow-400' },
-                  { label: 'Fazendo', val: '12', color: 'text-purple-400' },
-                  { label: 'Pendente', val: '3', color: 'text-pink-400' },
-                ].map((k, i) => (
-                  <div key={i} className="bg-white/5 rounded-xl p-3 text-center">
-                    <p className="text-white/30 text-[10px] uppercase tracking-wider">{k.label}</p>
-                    <p className={`font-bold text-lg ${k.color}`}>{k.val}</p>
+            </div>
+          </div>
+
+          {/* ── ÁREA DO CONTADOR ──────────────────────────────────── */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              {/* Mock visual — Portal do Contador */}
+              <div className="bg-white/[0.03] rounded-2xl p-5 border border-white/[0.08] order-2 lg:order-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-white font-black text-sm">Aximo</span>
+                  <span className="text-blue-400 text-[9px] font-bold uppercase">Painel do Contador</span>
+                </div>
+                <div className="flex gap-2 mb-3">
+                  {['Resumo', 'Painel Anual', 'Pendências', 'Particularidades', 'DOCS →'].map((t, i) => (
+                    <span key={i} className={`text-[10px] px-2.5 py-1 rounded-lg ${i === 0 ? 'bg-white/10 text-white font-medium' : 'text-white/20'}`}>{t}</span>
+                  ))}
+                </div>
+                <div className="grid grid-cols-5 gap-2 mb-3">
+                  {[{l:'Total',v:'50',c:'text-white'},{l:'Zeradas',v:'7',c:'text-green-400'},{l:'Lançadas',v:'0',c:'text-yellow-400'},{l:'Fazendo',v:'5',c:'text-purple-400'},{l:'S/ Zeram.',v:'0',c:'text-pink-400'}].map((k,i) => (
+                    <div key={i} className="bg-white/5 rounded-lg p-2 text-center">
+                      <p className="text-white/25 text-[8px] uppercase">{k.l}</p>
+                      <p className={`font-bold text-sm ${k.c}`}>{k.v}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="bg-white/5 rounded-lg p-3">
+                  <p className="text-white/30 text-[9px] uppercase font-bold mb-2">Processo Operacional</p>
+                  <p className="text-white/20 text-[10px]">Como essa carteira é operada — contexto e passos do fluxo.</p>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">Área do Contador</span>
+                <h3 className="text-2xl md:text-3xl font-black text-white mt-4 mb-4">Transparência total para o cliente</h3>
+                <p className="text-white/40 leading-relaxed mb-6">Seu cliente acompanha tudo em tempo real — sem precisar ligar ou esperar relatório. Cada carteira com acesso próprio e seguro.</p>
+                <div className="space-y-3">
+                  {[
+                    { icon: '📊', text: 'Resumo — KPIs da carteira com zeradas, lançadas e fazendo' },
+                    { icon: '🎯', text: 'Painel Anual — mesma visão do operador, read-only' },
+                    { icon: '⚠️', text: 'Pendências — vê o que está pendente sem precisar cobrar' },
+                    { icon: '📁', text: 'LUCA DOCS — acessa documentos organizados por setor' },
+                    { icon: '🔄', text: 'Processos — vê como a carteira é operada passo a passo' },
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-lg shrink-0">{f.icon}</span>
+                      <p className="text-sm text-white/50">{f.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── ÁREA ADMINISTRATIVA ───────────────────────────────── */}
+          <div className="mb-14">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full">Área Administrativa</span>
+                <h3 className="text-2xl md:text-3xl font-black text-white mt-4 mb-4">Gestão completa do escritório</h3>
+                <p className="text-white/40 leading-relaxed mb-6">Portal separado com controle financeiro, comercial e operacional. Tudo o que o dono do escritório precisa para tomar decisões.</p>
+                <div className="space-y-3">
+                  {[
+                    { icon: '💰', text: 'Financeiro — honorários, custos rateados, margem por carteira e DRE' },
+                    { icon: '🎯', text: 'CRM — funil de vendas, leads, follow-ups e propostas automáticas' },
+                    { icon: '🧮', text: 'Orçamentos — simulador de honorários com custo, imposto e margem' },
+                    { icon: '📊', text: 'Resumo — composição de receita, lucro e carteiras com alerta' },
+                    { icon: '📋', text: 'Atividade — monitoramento diário de produtividade por colaborador' },
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="text-lg shrink-0">{f.icon}</span>
+                      <p className="text-sm text-white/50">{f.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Mock visual — Administrativo */}
+              <div className="bg-white/[0.03] rounded-2xl p-5 border border-white/[0.08]">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-white font-bold text-sm">Painel Administrativo</span>
+                  <span className="text-[8px] bg-red-500/30 text-red-300 px-2 py-0.5 rounded-full font-bold uppercase">Restrito</span>
+                </div>
+                <div className="flex gap-1.5 mb-4 overflow-hidden">
+                  {['Resumo', 'Carteiras', 'Custos', 'DRE', 'Orçamento', 'CRM'].map((t, i) => (
+                    <span key={i} className={`text-[9px] px-2 py-1 rounded-lg shrink-0 ${i === 0 ? 'bg-white/10 text-white font-medium' : 'text-white/20'}`}>{t}</span>
+                  ))}
+                </div>
+                <div className="grid grid-cols-3 gap-2 mb-3">
+                  <div className="bg-green-500/10 rounded-lg p-2.5 text-center border border-green-500/20">
+                    <p className="text-green-400/60 text-[8px] uppercase">Receita</p>
+                    <p className="text-green-400 font-black text-sm">R$ 93k</p>
                   </div>
-                ))}
+                  <div className="bg-red-500/10 rounded-lg p-2.5 text-center border border-red-500/20">
+                    <p className="text-red-400/60 text-[8px] uppercase">Custos</p>
+                    <p className="text-red-400 font-black text-sm">R$ 68k</p>
+                  </div>
+                  <div className="bg-blue-500/10 rounded-lg p-2.5 text-center border border-blue-500/20">
+                    <p className="text-blue-400/60 text-[8px] uppercase">Lucro</p>
+                    <p className="text-blue-400 font-black text-sm">R$ 25k</p>
+                  </div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-3">
+                  <div className="h-3 rounded-full overflow-hidden flex mb-2">
+                    <div className="bg-orange-400 w-[55%]"></div>
+                    <div className="bg-amber-300 w-[15%]"></div>
+                    <div className="bg-red-400 w-[10%]"></div>
+                    <div className="bg-green-400 w-[20%]"></div>
+                  </div>
+                  <div className="flex gap-3 text-[8px] text-white/30">
+                    <span>Pessoal 55%</span><span>Despesas 15%</span><span>Imposto 10%</span><span>Lucro 20%</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* 3 Acessos */}
-          <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Três acessos, um sistema</h3>
-            <p className="text-white/40 max-w-xl mx-auto">Cada perfil com as ferramentas certas para sua função.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {LUCA_ACESSOS.map((a, i) => (
-              <div key={i} className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.10] hover:bg-white/[0.12] hover:border-blue-400/30 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute top-4 right-4">
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-full">{a.tag}</span>
-                </div>
-                <span className="text-4xl mb-5 block">{a.icon}</span>
-                <h3 className="font-black text-white text-xl mb-3">{a.title}</h3>
-                <p className="text-sm text-white/50 leading-relaxed">{a.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Funcionalidades do LUCA */}
-          <div className="mt-14">
-            <div className="text-center mb-10">
-              <p className="text-sm font-bold text-blue-300 uppercase tracking-[0.2em] mb-3">Funcionalidades</p>
-              <h3 className="text-2xl md:text-4xl font-black text-white">O que o LUCA faz por você</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {LUCA_FUNCOES.map((d, i) => (
-                <div key={i} className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-7 border border-white/[0.08] hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300">
-                  <span className="text-3xl mb-4 block">{d.icon}</span>
-                  <h3 className="font-bold text-white text-lg mb-2">{d.title}</h3>
-                  <p className="text-sm text-white/40 leading-relaxed">{d.desc}</p>
-                </div>
-              ))}
-            </div>
+          {/* Frase de impacto */}
+          <div className="text-center py-10 border-t border-white/[0.06]">
+            <p className="text-xl md:text-2xl font-bold text-white/60 italic max-w-3xl mx-auto">
+              &ldquo;Um sistema feito por quem está na linha de frente da contabilidade todos os dias.&rdquo;
+            </p>
           </div>
         </div>
       </div>
