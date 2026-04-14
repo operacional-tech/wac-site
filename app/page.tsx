@@ -403,10 +403,7 @@ export default function Home() {
       <footer className="relative z-10 border-t border-white/[0.06] text-white/30 py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <Image src="/logo-wac.jpg" alt="WAC" width={36} height={36} className="opacity-60" />
-              <span className="text-white/40 font-semibold text-sm">WAC Apoio Contabil</span>
-            </div>
+            <div />
             <div className="flex gap-8 text-sm">
               <a href="#servicos" className="hover:text-white transition-colors">Servicos</a>
               <a href="#luca" className="hover:text-white transition-colors">LUCA</a>
