@@ -79,7 +79,8 @@ export default function Home() {
                 <svg className={`w-4 h-4 transition-transform ${menuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
               {menuOpen && (
-                <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+                <div className="absolute right-0 top-full pt-1 w-56 z-50">
+                <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
                   <a href="https://luca.wacapoio.com.br/cliente/login"
                     className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors border-b border-gray-50">
                     Área do Contador
@@ -92,6 +93,7 @@ export default function Home() {
                     className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors">
                     Área Administrativa
                   </a>
+                </div>
                 </div>
               )}
             </div>
