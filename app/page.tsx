@@ -30,40 +30,47 @@ const NUMEROS = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ background: '#111d37' }}>
+    <div className="min-h-screen bg-white">
       {/* ════════════════════════════════════════════════════════════════ */}
-      {/* NAVBAR + HERO (tudo escuro, integrado como no LUCA)            */}
+      {/* NAVBAR — mesmo fundo da logo, com logo centralizada            */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden">
-        {/* Glow sutis */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)' }} />
-          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.04) 0%, transparent 70%)' }} />
-        </div>
-
-        {/* Links discretos no topo */}
-        <nav className="relative z-20 max-w-6xl mx-auto px-6 md:px-10 pt-4 flex items-center justify-between">
+      <nav className="relative overflow-hidden" style={{ background: '#111d37' }}>
+        {/* Links no topo */}
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-4 flex items-center justify-between">
           <div className="hidden md:flex items-center gap-6">
-            <a href="#servicos" className="text-white/30 hover:text-white text-sm font-medium transition-colors">Servicos</a>
-            <a href="#luca" className="text-white/30 hover:text-white text-sm font-medium transition-colors">LUCA</a>
-            <a href="#contato" className="text-white/30 hover:text-white text-sm font-medium transition-colors">Contato</a>
+            <a href="#servicos" className="text-white/50 hover:text-white text-sm font-medium transition-colors">Servicos</a>
+            <a href="#luca" className="text-white/50 hover:text-white text-sm font-medium transition-colors">LUCA</a>
+            <a href="#contato" className="text-white/50 hover:text-white text-sm font-medium transition-colors">Contato</a>
           </div>
           <div className="flex items-center gap-3 ml-auto md:ml-0">
-            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/30 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
+            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/40 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
             <a href="https://luca.wacapoio.com.br/login"
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
               Acessar LUCA
             </a>
           </div>
-        </nav>
+        </div>
 
-        {/* Logo centralizada + frase */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-8 pb-28 md:pt-10 md:pb-36 text-center">
-          {/* Logo WAC — fundo opaco igual ao site, sem bordas visiveis */}
-          <div className="flex justify-center mb-8">
-            <Image src="/logo-wac.jpg" alt="WAC Apoio Contabil" width={280} height={280}
-              className="drop-shadow-2xl" priority />
-          </div>
+        {/* Logo centralizada */}
+        <div className="relative z-10 flex justify-center py-6">
+          <Image src="/logo-wac.jpg" alt="WAC Apoio Contabil" width={220} height={220}
+            className="drop-shadow-2xl" priority />
+        </div>
+
+        {/* Frase dentro da navbar */}
+        <div className="relative z-10 text-center pb-8">
+          <h1 className="text-2xl md:text-4xl font-black text-white tracking-tight">
+            Referencia no apoio para contabilidades.
+          </h1>
+          <p className="text-white/30 text-sm mt-3 max-w-lg mx-auto">Contabilidade · Fiscal · Pessoal · Consultoria</p>
+        </div>
+      </nav>
+
+      {/* ════════════════════════════════════════════════════════════════ */}
+      {/* HERO — abaixo da navbar                                        */}
+      {/* ════════════════════════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #111d37 0%, #0c1a3a 100%)' }}>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-28 md:pt-20 md:pb-36 text-center">
 
           {/* Frase principal */}
           <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
