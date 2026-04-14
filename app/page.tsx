@@ -30,7 +30,7 @@ const NUMEROS = [
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #060d1f 0%, #0c1a3a 30%, #0f2240 60%, #0c1a3a 100%)' }}>
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* NAVBAR + HERO (tudo escuro, integrado como no LUCA)            */}
       {/* ════════════════════════════════════════════════════════════════ */}
@@ -119,42 +119,42 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* SERVICOS                                                       */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section id="servicos" className="py-24 px-6" style={{ background: '#f8fafc' }}>
+      <div id="servicos" className="py-24 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm font-bold text-blue-600 uppercase tracking-[0.2em] mb-3">O que fazemos</p>
-            <h2 className="text-3xl md:text-5xl font-black text-gray-900">Solucoes completas</h2>
-            <p className="text-gray-500 mt-4 max-w-xl mx-auto">Atendemos empresas de todos os portes e regimes tributarios com excelencia e tecnologia.</p>
+            <p className="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-3">O que fazemos</p>
+            <h2 className="text-3xl md:text-5xl font-black text-white">Solucoes completas</h2>
+            <p className="text-white/40 mt-4 max-w-xl mx-auto">Atendemos empresas de todos os portes e regimes tributarios com excelencia e tecnologia.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICOS.map((s, i) => (
-              <div key={i} className="bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-lg hover:border-blue-100 hover:-translate-y-1 transition-all duration-300">
+              <div key={i} className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-7 border border-white/[0.08] hover:bg-white/[0.08] hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
                 <span className="text-4xl mb-5 block">{s.icon}</span>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">{s.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{s.desc}</p>
+                <h3 className="font-bold text-white text-lg mb-2">{s.title}</h3>
+                <p className="text-sm text-white/40 leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* LUCA                                                           */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section id="luca" className="py-24 px-6">
+      <div id="luca" className="py-24 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-blue-50 rounded-full px-4 py-2 mb-5">
-                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                <span className="text-blue-600 font-bold text-sm">LUCA</span>
-                <span className="text-blue-400 text-xs">Sistema proprio</span>
+              <div className="inline-flex items-center gap-2 bg-blue-500/10 rounded-full px-4 py-2 mb-5">
+                <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+                <span className="text-blue-400 font-bold text-sm">LUCA</span>
+                <span className="text-blue-400/60 text-xs">Sistema proprio</span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
                 Seu escritorio na
-                <span className="block text-blue-600">palma da mao</span>
+                <span className="block text-blue-400">palma da mao</span>
               </h2>
-              <p className="text-gray-500 leading-relaxed mb-8 text-lg">
+              <p className="text-white/40 leading-relaxed mb-8 text-lg">
                 O LUCA e o sistema que desenvolvemos para dar visibilidade total aos nossos clientes. Cada carteira parceira acompanha em tempo real o andamento dos servicos — sem ligar, sem esperar.
               </p>
               <div className="space-y-5">
@@ -162,8 +162,8 @@ export default function Home() {
                   <div key={i} className="flex items-start gap-4">
                     <span className="text-2xl mt-0.5 shrink-0">{d.icon}</span>
                     <div>
-                      <h4 className="font-bold text-gray-900">{d.title}</h4>
-                      <p className="text-sm text-gray-500 mt-0.5">{d.desc}</p>
+                      <h4 className="font-bold text-white">{d.title}</h4>
+                      <p className="text-sm text-white/40 mt-0.5">{d.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -171,7 +171,7 @@ export default function Home() {
             </div>
 
             {/* Mock do sistema LUCA */}
-            <div className="bg-[#0c1a3a] rounded-3xl p-7 shadow-2xl shadow-blue-900/20">
+            <div className="bg-white/[0.03] backdrop-blur-sm rounded-3xl p-7 border border-white/[0.08] shadow-2xl">
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-3 h-3 rounded-full bg-red-500/40"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500/40"></div>
@@ -179,14 +179,12 @@ export default function Home() {
                 <span className="text-white/20 text-xs ml-3 font-mono">luca.wacapoio.com.br</span>
               </div>
 
-              {/* Tabs */}
               <div className="bg-white/5 rounded-xl p-5 mb-4">
                 <div className="flex gap-2 mb-4">
                   {['Painel Anual', 'Pendencias', 'Particularidades', 'Extratos'].map((t, i) => (
                     <span key={i} className={`text-[11px] px-3 py-1.5 rounded-lg font-medium ${i === 0 ? 'bg-white/10 text-white' : 'text-white/25'}`}>{t}</span>
                   ))}
                 </div>
-                {/* Grid simulando painel */}
                 <div className="grid grid-cols-12 gap-1.5">
                   {Array.from({ length: 72 }).map((_, i) => {
                     const colors = ['bg-green-500/50', 'bg-yellow-500/50', 'bg-purple-500/50', 'bg-pink-500/40', 'bg-white/[0.03]'];
@@ -196,7 +194,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* KPIs */}
               <div className="grid grid-cols-4 gap-2">
                 {[
                   { label: 'Zerado', val: '45', color: 'text-green-400' },
@@ -213,36 +210,33 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* DIFERENCIAIS LUCA                                              */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+      <div className="py-24 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm font-bold text-blue-600 uppercase tracking-[0.2em] mb-3">Diferenciais</p>
-            <h2 className="text-3xl md:text-5xl font-black text-gray-900">Tecnologia que faz a diferenca</h2>
+            <p className="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-3">Diferenciais</p>
+            <h2 className="text-3xl md:text-5xl font-black text-white">Tecnologia que faz a diferenca</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {LUCA_FEATURES.map((d, i) => (
-              <div key={i} className="bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div key={i} className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-7 border border-white/[0.08] hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300">
                 <span className="text-3xl mb-4 block">{d.icon}</span>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">{d.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{d.desc}</p>
+                <h3 className="font-bold text-white text-lg mb-2">{d.title}</h3>
+                <p className="text-sm text-white/40 leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* CTA                                                            */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section id="contato" style={{ background: 'linear-gradient(160deg, #0c1a3a 0%, #1a3355 100%)' }} className="py-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-20 w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)' }} />
-        </div>
+      <div id="contato" className="py-24 px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <p className="text-blue-300/50 text-sm font-medium uppercase tracking-[0.3em] mb-4">Vamos conversar</p>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-5">
@@ -263,12 +257,12 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* FOOTER                                                         */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <footer className="bg-[#060d1f] text-white/30 py-12 px-6">
+      <footer className="relative z-10 border-t border-white/[0.06] text-white/30 py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
