@@ -30,30 +30,15 @@ const NUMEROS = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ background: '#0f1b35' }}>
+    <div className="min-h-screen" style={{ background: '#111d37' }}>
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* NAVBAR + HERO (tudo escuro, integrado como no LUCA)            */}
       {/* ════════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden">
-        {/* Particulas decorativas */}
+        {/* Glow sutis */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
-            <pattern id="circuit" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M0 50h40M60 50h40M50 0v40M50 60v40" stroke="white" strokeWidth="0.5" fill="none"/>
-              <circle cx="50" cy="50" r="3" fill="white"/>
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#circuit)"/>
-          </svg>
-          {Array.from({ length: 40 }).map((_, i) => (
-            <div key={i} className="absolute rounded-full bg-blue-400"
-              style={{
-                left: `${(i * 19 + 5) % 100}%`, top: `${(i * 27 + 3) % 100}%`,
-                width: `${1.5 + (i % 3)}px`, height: `${1.5 + (i % 3)}px`,
-                opacity: 0.15 + (i % 4) * 0.08,
-              }} />
-          ))}
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)' }} />
-          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.06) 0%, transparent 70%)' }} />
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)' }} />
+          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.04) 0%, transparent 70%)' }} />
         </div>
 
         {/* Links discretos no topo */}
