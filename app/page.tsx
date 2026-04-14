@@ -30,10 +30,10 @@ const LUCA_FUNCOES = [
 ];
 
 const NUMEROS = [
-  { valor: '1.500+', label: 'Empresas gerenciadas' },
-  { valor: '100%', label: 'Disponibilidade integral' },
-  { valor: '24/7', label: 'Acesso ao sistema' },
-  { valor: '10+', label: 'Analistas formados e experientes' },
+  { valor: '1.500+', label: 'Empresas em operação' },
+  { valor: '100%', label: 'Setores em dia e padronizados' },
+  { valor: '24/7', label: 'Controle em tempo real via LUCA' },
+  { valor: '✓', label: 'Equipe consolidada + metodologia única' },
 ];
 
 export default function Home() {
