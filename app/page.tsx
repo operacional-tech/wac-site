@@ -52,20 +52,23 @@ export default function Home() {
             style={{ mask: 'radial-gradient(circle at center, black 20%, transparent 65%)', WebkitMask: 'radial-gradient(circle at center, black 20%, transparent 65%)' }} />
         </div>
 
-        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-10 flex items-center">
+        <div className="relative z-10 h-full max-w-5xl mx-auto px-6 flex items-center justify-center gap-10">
 
-          {/* Links centrais */}
-          <div className="hidden md:flex items-center gap-8 flex-1">
-            <a href="#servicos" className="text-white/60 hover:text-white text-sm font-medium transition-colors">Servicos</a>
-            <a href="#luca" className="text-white/60 hover:text-white text-sm font-medium transition-colors">LUCA</a>
-            <a href="#contato" className="text-white/60 hover:text-white text-sm font-medium transition-colors">Contato</a>
+          {/* Links esquerda */}
+          <div className="hidden md:flex items-center gap-7">
+            <a href="#servicos" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Serviços</a>
+            <a href="#luca" className="text-white/70 hover:text-white text-base font-semibold transition-colors">LUCA</a>
+            <a href="#contato" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Contato</a>
           </div>
 
-          {/* Direita */}
-          <div className="flex items-center gap-4 ml-auto">
-            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/40 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
+          {/* Espaço para logo no centro (a logo está posicionada absolute) */}
+          <div className="w-32" />
+
+          {/* Links direita */}
+          <div className="hidden md:flex items-center gap-7">
+            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Portal</a>
             <a href="https://luca.wacapoio.com.br/login"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all">
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl text-base font-bold transition-all">
               Acessar LUCA
             </a>
           </div>
