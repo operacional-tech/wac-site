@@ -46,11 +46,17 @@ export default function Home() {
           ))}
         </svg>
 
+        {/* Logo como fundo integrado no centro da navbar */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <Image src="/logo-wac.jpg" alt="" width={400} height={400} priority className="opacity-80"
+            style={{ mask: 'radial-gradient(ellipse 50% 50% at center, black 30%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 50% 50% at center, black 30%, transparent 100%)' }} />
+        </div>
+
         <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-10 flex items-center">
-          {/* Logo esquerda */}
+          {/* Texto WAC esquerda */}
           <div className="shrink-0 mr-8">
-            <Image src="/logo-wac.jpg" alt="WAC Apoio Contabil" width={90} height={90} priority
-              style={{ borderRadius: '12px' }} />
+            <span className="text-white font-black text-3xl tracking-tight">WAC</span>
+            <span className="text-white/30 text-xs block tracking-widest">APOIO CONTABIL</span>
           </div>
 
           {/* Links centrais */}
