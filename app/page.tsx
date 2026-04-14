@@ -32,12 +32,45 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* ════════════════════════════════════════════════════════════════ */}
-      {/* HERO                                                           */}
+      {/* NAVBAR BRANCA + HERO                                           */}
       {/* ════════════════════════════════════════════════════════════════ */}
+
+      {/* NavBar branca com logo centralizada */}
+      <nav className="bg-white shadow-sm relative z-20">
+        {/* Linha superior com links */}
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between py-3">
+          <div className="hidden md:flex items-center gap-6">
+            <a href="#servicos" className="text-gray-500 hover:text-blue-600 text-sm font-medium transition-colors">Servicos</a>
+            <a href="#luca" className="text-gray-500 hover:text-blue-600 text-sm font-medium transition-colors">LUCA</a>
+            <a href="#contato" className="text-gray-500 hover:text-blue-600 text-sm font-medium transition-colors">Contato</a>
+          </div>
+          <div className="flex items-center gap-3 ml-auto md:ml-0">
+            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-gray-400 hover:text-gray-700 text-sm transition-colors hidden md:block">Portal</a>
+            <a href="https://luca.wacapoio.com.br/login"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
+              Acessar LUCA
+            </a>
+          </div>
+        </div>
+
+        {/* Logo centralizada */}
+        <div className="flex justify-center pb-6 pt-2">
+          <Image src="/logo-wac-branca.jpg" alt="WAC Apoio Contabil" width={180} height={180}
+            className="drop-shadow-md" priority />
+        </div>
+
+        {/* Frase principal */}
+        <div className="text-center pb-8">
+          <h1 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">
+            Referencia no apoio para contabilidades.
+          </h1>
+        </div>
+      </nav>
+
+      {/* Hero escuro */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0c1a3a 40%, #1a3355 100%)' }}>
-        {/* Particulas / nodes decorativos */}
+        {/* Particulas decorativas */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Linhas de circuito */}
           <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
             <pattern id="circuit" width="100" height="100" patternUnits="userSpaceOnUse">
               <path d="M0 50h40M60 50h40M50 0v40M50 60v40" stroke="white" strokeWidth="0.5" fill="none"/>
@@ -45,7 +78,6 @@ export default function Home() {
             </pattern>
             <rect width="100%" height="100%" fill="url(#circuit)"/>
           </svg>
-          {/* Dots brilhantes */}
           {Array.from({ length: 40 }).map((_, i) => (
             <div key={i} className="absolute rounded-full bg-blue-400"
               style={{
@@ -54,62 +86,20 @@ export default function Home() {
                 opacity: 0.15 + (i % 4) * 0.08,
               }} />
           ))}
-          {/* Glow gradients */}
           <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)' }} />
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.06) 0%, transparent 70%)' }} />
         </div>
 
-        {/* NavBar estilo LUCA — fixa com logo + links + estrelas */}
-        <nav className="relative z-20" style={{ background: '#0c1a3a', height: '120px' }}>
-          {/* Estrelas na navbar */}
-          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            {/* Pontos de estrela */}
-            {[[2,30],[5,70],[8,45],[11,20],[14,80],[17,55],[20,15],[22,85],[26,40],[29,65],[32,25],[35,90],[38,50],[41,10],[44,75],[47,35],[50,60],[53,20],[56,85],[59,45],[62,70],[65,15],[67,55],[70,80],[73,30],[75,65],[78,40],[81,85],[83,20],[86,60],[88,35],[90,75],[92,50],[94,15],[96,70],[98,40]].map(([x,y], i) => (
-              <circle key={i} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 3) * 0.5} fill="white" opacity={0.15 + (i % 5) * 0.08} />
-            ))}
-            {/* Linhas de constelação */}
-            {[[2,30,5,70],[5,70,8,45],[8,45,14,80],[14,80,20,15],[26,40,32,25],[32,25,38,50],[53,20,59,45],[62,70,67,55],[73,30,78,40],[83,20,88,35],[90,75,96,70]].map(([x1,y1,x2,y2], i) => (
-              <line key={i} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.5" opacity="0.06" />
-            ))}
-          </svg>
-
-          <div className="relative z-10 h-full max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center shrink-0">
-              <div className="relative">
-                <Image src="/logo-wac.png" alt="WAC" width={110} height={110} className="drop-shadow-lg" priority
-                  style={{ mask: 'radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%)' }} />
-              </div>
-            </div>
-
-            {/* Links centrais */}
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#servicos" className="text-white/60 hover:text-white text-sm font-medium transition-colors">Servicos</a>
-              <a href="#luca" className="text-white/60 hover:text-white text-sm font-medium transition-colors">LUCA</a>
-              <a href="#contato" className="text-white/60 hover:text-white text-sm font-medium transition-colors">Contato</a>
-            </div>
-
-            {/* Botões direita */}
-            <div className="flex items-center gap-3">
-              <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/50 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
-              <a href="https://luca.wacapoio.com.br/login"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
-                Acessar LUCA
-              </a>
-            </div>
-          </div>
-        </nav>
-
         {/* Hero conteudo */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-28 md:pt-28 md:pb-36 text-center">
-          <p className="text-blue-300/70 text-sm font-medium uppercase tracking-[0.3em] mb-6">Apoio Contabil</p>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-28 md:pt-24 md:pb-32 text-center">
+          <p className="text-blue-300/70 text-sm font-medium uppercase tracking-[0.3em] mb-6">Sistema proprio</p>
 
-          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
             Contabilidade com{' '}
             <span style={{ background: 'linear-gradient(90deg, #60a5fa, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              tecnologia
+              tecnologia e precisao
             </span>
-          </h1>
+          </h2>
 
           <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-10">
             Unimos expertise contabil ao LUCA — nosso sistema proprio que oferece transparencia total e controle em tempo real para nossos clientes e parceiros.
@@ -297,8 +287,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <Image src="/logo-wac.png" alt="WAC" width={48} height={48} className="opacity-50"
-                style={{ mask: 'radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%)' }} />
+              <Image src="/logo-wac-branca.jpg" alt="WAC" width={40} height={40} className="opacity-60 rounded" />
               <span className="text-white/40 font-semibold text-sm">WAC Apoio Contabil</span>
             </div>
             <div className="flex gap-8 text-sm">
