@@ -10,7 +10,7 @@ import { useState } from "react";
 const SERVICOS = [
   { icon: '🏢', title: 'Operação Contábil Completa', desc: 'Assumimos toda a rotina contábil do seu escritório — classificações, conciliações, balancetes e demonstrações — como uma extensão da sua equipe.' },
   { icon: '📋', title: 'Operação Fiscal Integrada', desc: 'Apuração de impostos, escrituração fiscal, obrigações acessórias e compliance tributário para todos os regimes, com processo padronizado.' },
-  { icon: '⚡', title: 'Entrega e Volume', desc: 'Alta capacidade de entrega com volume. Reduza custos fixos com equipe interna e ganhe uma operação que escala junto com o seu escritório.' },
+  { icon: '💲', title: 'Menos Custo, Mais Volume', desc: 'Reduza custos fixos com equipe interna. Entregamos mais volume com a mesma qualidade — sua operação escala sem aumentar estrutura.' },
   { icon: '🔄', title: 'Metodologia WAC', desc: 'Processos internos únicos, sistema LUCA integrado e controle em tempo real. Seu escritório ganha escala sem perder qualidade.' },
 ];
 
