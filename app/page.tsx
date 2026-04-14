@@ -195,7 +195,7 @@ export default function Home() {
                 O LUCA é o sistema que desenvolvemos para dar visibilidade total aos nossos clientes. Cada carteira parceira acompanha em tempo real o andamento dos serviços — sem ligar, sem esperar.
               </p>
               <div className="space-y-5">
-                {LUCA_FEATURES.slice(0, 3).map((d, i) => (
+                {LUCA_FUNCOES.slice(0, 3).map((d, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <span className="text-2xl mt-0.5 shrink-0">{d.icon}</span>
                     <div>
