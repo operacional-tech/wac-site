@@ -8,10 +8,10 @@ import { useState } from "react";
 // ═══════════════════════════════════════════════════════════════════════
 
 const SERVICOS = [
-  { icon: '📊', title: 'Contabilidade', desc: 'Escrituração, balancetes, demonstrações contábeis e obrigações acessórias com precisão e agilidade.' },
-  { icon: '📋', title: 'Fiscal e Tributário', desc: 'Apuração de impostos, planejamento tributário e compliance fiscal para Simples, Presumido e Real.' },
-  { icon: '👥', title: 'Departamento Pessoal', desc: 'Folha de pagamento, admissões, rescisões, eSocial e todas as rotinas trabalhistas.' },
-  { icon: '📈', title: 'Consultoria', desc: 'Análise financeira, indicadores de gestão e apoio estratégico na tomada de decisões.' },
+  { icon: '🏢', title: 'Operação Contábil Completa', desc: 'Assumimos toda a rotina contábil do seu escritório — classificações, conciliações, balancetes e demonstrações — como uma extensão da sua equipe.' },
+  { icon: '📋', title: 'Operação Fiscal Integrada', desc: 'Apuração de impostos, escrituração fiscal, obrigações acessórias e compliance tributário para todos os regimes, com processo padronizado.' },
+  { icon: '⚡', title: 'Menos Custo, Mais Resultado', desc: 'Elimine custos fixos com equipe interna. Nossa metodologia própria entrega o mesmo volume com menos tempo e mais precisão.' },
+  { icon: '🔄', title: 'Metodologia WAC', desc: 'Processos internos únicos, sistema LUCA integrado e controle em tempo real. Seu escritório ganha escala sem perder qualidade.' },
 ];
 
 const LUCA_FEATURES = [
@@ -150,9 +150,9 @@ export default function Home() {
       <div id="servicos" className="py-16 px-6 relative z-10" style={{ background: '#1a3a8f' }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <p className="text-sm font-bold text-white/60 uppercase tracking-[0.2em] mb-3">O que fazemos</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white">Soluções completas</h2>
-            <p className="text-white/50 mt-4 max-w-xl mx-auto">Atendemos empresas de todos os portes e regimes tributários com excelência e tecnologia.</p>
+            <p className="text-sm font-bold text-white/60 uppercase tracking-[0.2em] mb-3">Quarteirização contábil e fiscal</p>
+            <h2 className="text-3xl md:text-5xl font-black text-white">Seu escritório, nossa operação</h2>
+            <p className="text-white/50 mt-4 max-w-2xl mx-auto">Toda a execução contábil e fiscal do seu escritório feita pela WAC — 100% alinhada com sua forma de trabalhar, com metodologia própria e sistema integrado.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICOS.map((s, i) => (
