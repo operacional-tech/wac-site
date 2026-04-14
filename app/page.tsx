@@ -30,10 +30,10 @@ const LUCA_FUNCOES = [
 ];
 
 const NUMEROS = [
-  { valor: '20+', label: 'Carteiras ativas' },
   { valor: '1.500+', label: 'Empresas gerenciadas' },
-  { valor: '100%', label: 'Digital' },
+  { valor: '100%', label: 'Disponibilidade integral' },
   { valor: '24/7', label: 'Acesso ao sistema' },
+  { valor: '10+', label: 'Analistas formados e experientes' },
 ];
 
 export default function Home() {
