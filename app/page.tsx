@@ -116,6 +116,9 @@ export default function Home() {
           <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-5">
             Referência no apoio para contabilidades.
           </h1>
+          <p className="text-white/60 text-xl md:text-2xl font-semibold mb-4 italic">
+            Não somos uma contabilidade, apoiamos contabilidades.
+          </p>
           <p className="text-white/40 max-w-2xl mx-auto text-lg mb-12">
             Toda a execução contábil e fiscal do seu escritório feita pela WAC — 100% alinhada com sua forma de trabalhar, com metodologia própria e sistema integrado.
           </p>
@@ -151,14 +154,14 @@ export default function Home() {
       <section className="relative overflow-hidden" style={{ background: '#1a3a8f' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
 
-          <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Sistema de Produtividade Próprio</p>
+          <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Conheça o LUCA</p>
 
           <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
-            Referência no apoio para contabilidades.
+            Seu escritório, nossa tecnologia.
           </h2>
 
           <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-8">
-            Unimos expertise contábil ao LUCA — nosso sistema próprio que oferece transparência total e controle em tempo real para nossos clientes e parceiros.
+            O LUCA é o sistema próprio da WAC — feito por quem vive a rotina contábil todos os dias. Controle total, transparência para o cliente e gestão inteligente do escritório.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
