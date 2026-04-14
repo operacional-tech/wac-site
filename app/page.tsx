@@ -32,42 +32,8 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* ════════════════════════════════════════════════════════════════ */}
-      {/* NAVBAR BRANCA + HERO                                           */}
+      {/* NAVBAR + HERO (tudo escuro, integrado como no LUCA)            */}
       {/* ════════════════════════════════════════════════════════════════ */}
-
-      {/* NavBar branca com logo centralizada */}
-      <nav className="bg-white shadow-sm relative z-20">
-        {/* Linha superior com links */}
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between py-3">
-          <div className="hidden md:flex items-center gap-6">
-            <a href="#servicos" className="text-gray-500 hover:text-blue-600 text-sm font-medium transition-colors">Servicos</a>
-            <a href="#luca" className="text-gray-500 hover:text-blue-600 text-sm font-medium transition-colors">LUCA</a>
-            <a href="#contato" className="text-gray-500 hover:text-blue-600 text-sm font-medium transition-colors">Contato</a>
-          </div>
-          <div className="flex items-center gap-3 ml-auto md:ml-0">
-            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-gray-400 hover:text-gray-700 text-sm transition-colors hidden md:block">Portal</a>
-            <a href="https://luca.wacapoio.com.br/login"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
-              Acessar LUCA
-            </a>
-          </div>
-        </div>
-
-        {/* Logo centralizada */}
-        <div className="flex justify-center pb-6 pt-2">
-          <Image src="/logo-wac-branca.jpg" alt="WAC Apoio Contabil" width={180} height={180}
-            className="drop-shadow-md" priority />
-        </div>
-
-        {/* Frase principal */}
-        <div className="text-center pb-8">
-          <h1 className="text-2xl md:text-4xl font-black text-gray-900 tracking-tight">
-            Referencia no apoio para contabilidades.
-          </h1>
-        </div>
-      </nav>
-
-      {/* Hero escuro */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0c1a3a 40%, #1a3355 100%)' }}>
         {/* Particulas decorativas */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -90,18 +56,37 @@ export default function Home() {
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.06) 0%, transparent 70%)' }} />
         </div>
 
-        {/* Hero conteudo */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-28 md:pt-24 md:pb-32 text-center">
-          <p className="text-blue-300/70 text-sm font-medium uppercase tracking-[0.3em] mb-6">Sistema proprio</p>
+        {/* NavBar integrada no hero escuro — como o LUCA */}
+        <nav className="relative z-20 max-w-6xl mx-auto px-6 md:px-10 pt-5 flex items-center justify-between">
+          <div className="hidden md:flex items-center gap-6">
+            <a href="#servicos" className="text-white/50 hover:text-white text-sm font-medium transition-colors">Servicos</a>
+            <a href="#luca" className="text-white/50 hover:text-white text-sm font-medium transition-colors">LUCA</a>
+            <a href="#contato" className="text-white/50 hover:text-white text-sm font-medium transition-colors">Contato</a>
+          </div>
+          <div className="flex items-center gap-3 ml-auto md:ml-0">
+            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/40 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
+            <a href="https://luca.wacapoio.com.br/login"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
+              Acessar LUCA
+            </a>
+          </div>
+        </nav>
 
-          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
-            Contabilidade com{' '}
-            <span style={{ background: 'linear-gradient(90deg, #60a5fa, #34d399)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-              tecnologia e precisao
-            </span>
-          </h2>
+        {/* Logo centralizada + frase + hero */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-12 pb-28 md:pt-16 md:pb-36 text-center">
+          {/* Logo WAC — imagem com mask para fundir bordas no fundo escuro */}
+          <div className="flex justify-center mb-8">
+            <Image src="/logo-wac.png" alt="WAC Apoio Contabil" width={200} height={200}
+              className="drop-shadow-2xl" priority
+              style={{ mask: 'radial-gradient(ellipse 65% 65% at center, black 45%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 65% 65% at center, black 45%, transparent 100%)' }} />
+          </div>
 
-          <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-10">
+          {/* Frase principal */}
+          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
+            Referencia no apoio para contabilidades.
+          </h1>
+
+          <p className="text-lg md:text-xl text-white/40 max-w-2xl mx-auto leading-relaxed mb-10">
             Unimos expertise contabil ao LUCA — nosso sistema proprio que oferece transparencia total e controle em tempo real para nossos clientes e parceiros.
           </p>
 
