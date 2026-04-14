@@ -120,7 +120,7 @@ export default function Home() {
             Não somos uma contabilidade, apoiamos contabilidades.
           </p>
           <p className="text-white/40 max-w-2xl mx-auto text-lg mb-12">
-            Toda a execução contábil e fiscal do seu escritório feita pela WAC — 100% alinhada com sua forma de trabalhar, com metodologia própria e sistema integrado.
+            Apoio para a execução contábil e fiscal do seu escritório — 100% alinhada com sua forma de trabalhar, com metodologia própria e sistema integrado.
           </p>
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-6 pb-16">
