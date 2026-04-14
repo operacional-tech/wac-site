@@ -108,17 +108,54 @@ export default function Home() {
       </nav>
 
       {/* ════════════════════════════════════════════════════════════════ */}
-      {/* HERO — abaixo da navbar                                        */}
+      {/* QUARTEIRIZACAO — primeira coisa que o visitante ve              */}
+      {/* ════════════════════════════════════════════════════════════════ */}
+      <section id="servicos" className="relative overflow-hidden" style={{ background: '#111d37' }}>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-14 pb-8 md:pt-20 md:pb-10 text-center">
+          <p className="text-blue-300/60 text-sm font-bold uppercase tracking-[0.2em] mb-4">Quarteirização contábil e fiscal</p>
+          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-5">
+            Seu escritório, nossa operação.
+          </h1>
+          <p className="text-white/40 max-w-2xl mx-auto text-lg mb-12">
+            Toda a execução contábil e fiscal do seu escritório feita pela WAC — 100% alinhada com sua forma de trabalhar, com metodologia própria e sistema integrado.
+          </p>
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SERVICOS.map((s, i) => (
+              <div key={i} className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.10] hover:bg-white/[0.12] hover:border-white/25 hover:-translate-y-1 transition-all duration-300">
+                <span className="text-5xl mb-5 block">{s.icon}</span>
+                <h3 className="font-bold text-white text-xl mb-3">{s.title}</h3>
+                <p className="text-sm text-white/45 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* KPIs */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {NUMEROS.map((n, i) => (
+              <div key={i} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 text-center">
+                <p className="text-3xl md:text-4xl font-black text-white">{n.valor}</p>
+                <p className="text-xs text-white/40 mt-1 uppercase tracking-wider">{n.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════════════ */}
+      {/* HERO LUCA — abaixo da quarteirizacao                           */}
       {/* ════════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden" style={{ background: '#1a3a8f' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
 
-          <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Quarteirização Contábil + Sistema de Produtividade Próprio</p>
+          <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Sistema de Produtividade Próprio</p>
 
-          {/* Frase principal */}
-          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
+          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
             Referência no apoio para contabilidades.
-          </h1>
+          </h2>
 
           <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-8">
             Unimos expertise contábil ao LUCA — nosso sistema próprio que oferece transparência total e controle em tempo real para nossos clientes e parceiros.
@@ -137,41 +174,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Numeros */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {NUMEROS.map((n, i) => (
-              <div key={i} className="bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-5 text-center">
-                <p className="text-3xl md:text-4xl font-black text-white">{n.valor}</p>
-                <p className="text-xs text-white/40 mt-1 uppercase tracking-wider">{n.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
-
-      {/* ════════════════════════════════════════════════════════════════ */}
-      {/* SERVICOS                                                       */}
-      {/* ════════════════════════════════════════════════════════════════ */}
-      <div id="servicos" className="py-16 px-6 relative z-10" style={{ background: '#1a3a8f' }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-sm font-bold text-white/60 uppercase tracking-[0.2em] mb-3">Quarteirização contábil e fiscal</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white">Seu escritório, nossa operação</h2>
-            <p className="text-white/50 mt-4 max-w-2xl mx-auto">Toda a execução contábil e fiscal do seu escritório feita pela WAC — 100% alinhada com sua forma de trabalhar, com metodologia própria e sistema integrado.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICOS.map((s, i) => (
-              <div key={i} className="bg-white/[0.08] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.12] hover:bg-white/[0.15] hover:border-white/30 hover:-translate-y-1 transition-all duration-300">
-                <span className="text-5xl mb-5 block">{s.icon}</span>
-                <h3 className="font-bold text-white text-xl mb-3">{s.title}</h3>
-                <p className="text-sm text-white/50 leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* LUCA                                                           */}
       {/* ════════════════════════════════════════════════════════════════ */}
