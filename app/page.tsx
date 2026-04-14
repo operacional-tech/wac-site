@@ -81,15 +81,15 @@ export default function Home() {
               {menuOpen && (
                 <div className="absolute right-0 top-full pt-1 w-56 z-50">
                 <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
-                  <a href="https://luca.wacapoio.com.br/cliente/login"
+                  <a href="https://luca.wacapoio.com.br/cliente/login" target="_blank" rel="noopener noreferrer"
                     className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors border-b border-gray-50">
                     Área do Contador
                   </a>
-                  <a href="https://luca.wacapoio.com.br/login"
+                  <a href="https://luca.wacapoio.com.br/login" target="_blank" rel="noopener noreferrer"
                     className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors border-b border-gray-50">
                     Área do Operador
                   </a>
-                  <a href="https://luca.wacapoio.com.br/administrativo/login"
+                  <a href="https://luca.wacapoio.com.br/administrativo/login" target="_blank" rel="noopener noreferrer"
                     className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors">
                     Área Administrativa
                   </a>
