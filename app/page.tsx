@@ -30,11 +30,11 @@ const NUMEROS = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #060d1f 0%, #0c1a3a 30%, #0f2240 60%, #0c1a3a 100%)' }}>
+    <div className="min-h-screen" style={{ background: '#0f1b35' }}>
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* NAVBAR + HERO (tudo escuro, integrado como no LUCA)            */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #060d1f 0%, #0c1a3a 40%, #1a3355 100%)' }}>
+      <section className="relative overflow-hidden">
         {/* Particulas decorativas */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
@@ -56,15 +56,15 @@ export default function Home() {
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.06) 0%, transparent 70%)' }} />
         </div>
 
-        {/* NavBar integrada no hero escuro — como o LUCA */}
-        <nav className="relative z-20 max-w-6xl mx-auto px-6 md:px-10 pt-5 flex items-center justify-between">
+        {/* Links discretos no topo */}
+        <nav className="relative z-20 max-w-6xl mx-auto px-6 md:px-10 pt-4 flex items-center justify-between">
           <div className="hidden md:flex items-center gap-6">
-            <a href="#servicos" className="text-white/50 hover:text-white text-sm font-medium transition-colors">Servicos</a>
-            <a href="#luca" className="text-white/50 hover:text-white text-sm font-medium transition-colors">LUCA</a>
-            <a href="#contato" className="text-white/50 hover:text-white text-sm font-medium transition-colors">Contato</a>
+            <a href="#servicos" className="text-white/30 hover:text-white text-sm font-medium transition-colors">Servicos</a>
+            <a href="#luca" className="text-white/30 hover:text-white text-sm font-medium transition-colors">LUCA</a>
+            <a href="#contato" className="text-white/30 hover:text-white text-sm font-medium transition-colors">Contato</a>
           </div>
           <div className="flex items-center gap-3 ml-auto md:ml-0">
-            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/40 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
+            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/30 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
             <a href="https://luca.wacapoio.com.br/login"
               className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
               Acessar LUCA
@@ -72,13 +72,12 @@ export default function Home() {
           </div>
         </nav>
 
-        {/* Logo centralizada + frase + hero */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-12 pb-28 md:pt-16 md:pb-36 text-center">
-          {/* Logo WAC — imagem com mask para fundir bordas no fundo escuro */}
+        {/* Logo centralizada + frase */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-8 pb-28 md:pt-10 md:pb-36 text-center">
+          {/* Logo WAC — fundo opaco igual ao site, sem bordas visiveis */}
           <div className="flex justify-center mb-8">
-            <Image src="/logo-wac.png" alt="WAC Apoio Contabil" width={200} height={200}
-              className="drop-shadow-2xl" priority
-              style={{ mask: 'radial-gradient(ellipse 65% 65% at center, black 45%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 65% 65% at center, black 45%, transparent 100%)' }} />
+            <Image src="/logo-wac.jpg" alt="WAC Apoio Contabil" width={280} height={280}
+              className="drop-shadow-2xl" priority />
           </div>
 
           {/* Frase principal */}
@@ -266,7 +265,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <Image src="/logo-wac-branca.jpg" alt="WAC" width={40} height={40} className="opacity-60 rounded" />
+              <Image src="/logo-wac.jpg" alt="WAC" width={36} height={36} className="opacity-60" />
               <span className="text-white/40 font-semibold text-sm">WAC Apoio Contabil</span>
             </div>
             <div className="flex gap-8 text-sm">
