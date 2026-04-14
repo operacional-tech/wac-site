@@ -45,7 +45,7 @@ export default function Home() {
       {/* NAVBAR — barra horizontal fixa, estilo LUCA                    */}
       {/* Logo esquerda, links centro, botao direita, 120px altura       */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <nav className="relative" style={{ background: '#111d37', height: '120px', zIndex: 50 }}>
+      <nav className="relative" style={{ background: '#111d37', height: '180px', zIndex: 50 }}>
         {/* Estrelas e constelacoes — igual LUCA */}
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           {[[2,30],[5,70],[8,45],[11,20],[14,80],[17,55],[20,15],[22,85],[26,40],[29,65],[32,25],[35,90],[38,50],[41,10],[44,75],[47,35],[50,60],[53,20],[56,85],[59,45],[62,70],[65,15],[67,55],[70,80],[73,30],[75,65],[78,40],[81,85],[83,20],[86,60],[88,35],[90,75],[92,50],[94,15],[96,70],[98,40]].map(([x,y], i) => (
@@ -58,11 +58,11 @@ export default function Home() {
 
         {/* Logo integrada no centro da navbar — mask forte para fundir 100% */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <Image src="/logo-wac.jpg" alt="" width={220} height={220} priority
+          <Image src="/logo-wac.jpg" alt="" width={280} height={280} priority
             style={{ mask: 'radial-gradient(circle at center, black 20%, transparent 65%)', WebkitMask: 'radial-gradient(circle at center, black 20%, transparent 65%)' }} />
         </div>
 
-        <div className="relative z-10 h-full max-w-6xl mx-auto px-6 flex items-center justify-center gap-16">
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-8 flex items-center justify-center gap-14">
 
           {/* Links esquerda */}
           <div className="hidden md:flex items-center gap-10">
@@ -72,7 +72,7 @@ export default function Home() {
           </div>
 
           {/* Espaço para logo no centro */}
-          <div className="w-44" />
+          <div className="w-56" />
 
           {/* Links direita */}
           <div className="hidden md:flex items-center gap-10">
