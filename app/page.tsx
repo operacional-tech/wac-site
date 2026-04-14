@@ -40,7 +40,35 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen" style={{ background: '#1a3a8f' }}>
+    <div className="min-h-screen relative" style={{ background: '#1a3a8f' }}>
+      {/* Estrelas e constelações — fundo de todo o site */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          {/* Estrelas */}
+          {[[1,5],[3,15],[5,28],[7,42],[9,55],[11,68],[13,82],[15,95],
+            [18,8],[20,22],[22,38],[24,52],[26,65],[28,78],[30,92],
+            [33,12],[35,30],[37,45],[39,58],[41,72],[43,85],
+            [46,6],[48,20],[50,35],[52,50],[54,62],[56,75],[58,88],
+            [61,10],[63,25],[65,40],[67,55],[69,70],[71,82],[73,95],
+            [76,8],[78,22],[80,38],[82,52],[84,65],[86,78],[88,92],
+            [91,15],[93,30],[95,45],[97,60],[99,75],
+            [2,48],[8,72],[14,35],[19,88],[25,18],[31,62],[36,8],
+            [42,52],[47,78],[53,28],[59,95],[64,15],[70,48],[75,68],
+            [81,25],[87,58],[92,42],[98,85]].map(([x,y], i) => (
+            <circle key={`gs${i}`} cx={`${x}%`} cy={`${y}%`} r={0.6 + (i % 4) * 0.4} fill="white" opacity={0.08 + (i % 6) * 0.03} />
+          ))}
+          {/* Constelações */}
+          {[[1,5,3,15],[3,15,5,28],[5,28,9,55],[13,82,15,95],[18,8,20,22],[20,22,24,52],
+            [33,12,35,30],[35,30,39,58],[46,6,48,20],[48,20,52,50],
+            [61,10,63,25],[63,25,67,55],[76,8,78,22],[78,22,82,52],
+            [91,15,93,30],[93,30,97,60],
+            [2,48,8,72],[14,35,19,88],[25,18,31,62],
+            [42,52,47,78],[53,28,59,95],[64,15,70,48],
+            [75,68,81,25],[87,58,92,42]].map(([x1,y1,x2,y2], i) => (
+            <line key={`gl${i}`} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.4" opacity="0.04" />
+          ))}
+        </svg>
+      </div>
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* NAVBAR — barra horizontal fixa, estilo LUCA                    */}
       {/* Logo esquerda, links centro, botao direita, 120px altura       */}
@@ -223,7 +251,7 @@ export default function Home() {
               {/* Mock visual — Portal do Contador */}
               <div className="bg-white/[0.03] rounded-2xl p-5 border border-white/[0.08] order-2 lg:order-1">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-white font-black text-sm">Aximo</span>
+                  <span className="text-white font-black text-sm">Exemplo</span>
                   <span className="text-blue-400 text-[9px] font-bold uppercase">Painel do Contador</span>
                 </div>
                 <div className="flex gap-2 mb-3">
