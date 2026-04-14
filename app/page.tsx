@@ -59,29 +59,46 @@ export default function Home() {
           <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(52,211,153,0.06) 0%, transparent 70%)' }} />
         </div>
 
-        {/* Nav */}
-        <nav className="relative z-10 max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div />
-          <div className="flex items-center gap-6">
-            <a href="#servicos" className="text-white/50 hover:text-white text-sm transition-colors hidden md:block">Servicos</a>
-            <a href="#luca" className="text-white/50 hover:text-white text-sm transition-colors hidden md:block">LUCA</a>
-            <a href="#contato" className="text-white/50 hover:text-white text-sm transition-colors hidden md:block">Contato</a>
-            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/60 hover:text-white text-sm transition-colors">Portal</a>
-            <a href="https://luca.wacapoio.com.br/login"
-              className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2 rounded-xl text-sm font-semibold transition-all">
-              Acessar LUCA
-            </a>
+        {/* NavBar estilo LUCA — fixa com logo + links + estrelas */}
+        <nav className="relative z-20" style={{ background: '#0c1a3a', height: '120px' }}>
+          {/* Estrelas na navbar */}
+          <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            {/* Pontos de estrela */}
+            {[[2,30],[5,70],[8,45],[11,20],[14,80],[17,55],[20,15],[22,85],[26,40],[29,65],[32,25],[35,90],[38,50],[41,10],[44,75],[47,35],[50,60],[53,20],[56,85],[59,45],[62,70],[65,15],[67,55],[70,80],[73,30],[75,65],[78,40],[81,85],[83,20],[86,60],[88,35],[90,75],[92,50],[94,15],[96,70],[98,40]].map(([x,y], i) => (
+              <circle key={i} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 3) * 0.5} fill="white" opacity={0.15 + (i % 5) * 0.08} />
+            ))}
+            {/* Linhas de constelação */}
+            {[[2,30,5,70],[5,70,8,45],[8,45,14,80],[14,80,20,15],[26,40,32,25],[32,25,38,50],[53,20,59,45],[62,70,67,55],[73,30,78,40],[83,20,88,35],[90,75,96,70]].map(([x1,y1,x2,y2], i) => (
+              <line key={i} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.5" opacity="0.06" />
+            ))}
+          </svg>
+
+          <div className="relative z-10 h-full max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center gap-4 shrink-0">
+              <Image src="/logo-wac.png" alt="WAC" width={100} height={56} className="drop-shadow-lg" priority />
+            </div>
+
+            {/* Links centrais */}
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#servicos" className="text-white/60 hover:text-white text-sm font-medium transition-colors">Servicos</a>
+              <a href="#luca" className="text-white/60 hover:text-white text-sm font-medium transition-colors">LUCA</a>
+              <a href="#contato" className="text-white/60 hover:text-white text-sm font-medium transition-colors">Contato</a>
+            </div>
+
+            {/* Botões direita */}
+            <div className="flex items-center gap-3">
+              <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/50 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
+              <a href="https://luca.wacapoio.com.br/login"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
+                Acessar LUCA
+              </a>
+            </div>
           </div>
         </nav>
 
-        {/* Logo central + conteudo */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-12 pb-28 md:pt-16 md:pb-36 text-center">
-          {/* Logo WAC */}
-          <div className="flex justify-center mb-10">
-            <Image src="/logo-wac.png" alt="WAC Apoio Contabil" width={320} height={180}
-              className="drop-shadow-2xl" priority />
-          </div>
-
+        {/* Hero conteudo */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-20 pb-28 md:pt-28 md:pb-36 text-center">
           <p className="text-blue-300/70 text-sm font-medium uppercase tracking-[0.3em] mb-6">Apoio Contabil</p>
 
           <h1 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
