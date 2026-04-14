@@ -75,8 +75,11 @@ export default function Home() {
 
           <div className="relative z-10 h-full max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center gap-4 shrink-0">
-              <Image src="/logo-wac.png" alt="WAC" width={100} height={56} className="drop-shadow-lg" priority />
+            <div className="flex items-center shrink-0">
+              <div className="relative">
+                <Image src="/logo-wac.png" alt="WAC" width={110} height={110} className="drop-shadow-lg" priority
+                  style={{ mask: 'radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%)' }} />
+              </div>
             </div>
 
             {/* Links centrais */}
@@ -294,7 +297,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <Image src="/logo-wac.png" alt="WAC" width={48} height={28} className="opacity-50" />
+              <Image src="/logo-wac.png" alt="WAC" width={48} height={48} className="opacity-50"
+                style={{ mask: 'radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%)', WebkitMask: 'radial-gradient(ellipse 70% 70% at center, black 40%, transparent 100%)' }} />
               <span className="text-white/40 font-semibold text-sm">WAC Apoio Contabil</span>
             </div>
             <div className="flex gap-8 text-sm">
