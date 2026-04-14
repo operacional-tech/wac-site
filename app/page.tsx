@@ -10,17 +10,23 @@ import { useState } from "react";
 const SERVICOS = [
   { icon: '🏢', title: 'Operação Contábil Completa', desc: 'Assumimos toda a rotina contábil do seu escritório — classificações, conciliações, balancetes e demonstrações — como uma extensão da sua equipe.' },
   { icon: '📋', title: 'Operação Fiscal Integrada', desc: 'Apuração de impostos, escrituração fiscal, obrigações acessórias e compliance tributário para todos os regimes, com processo padronizado.' },
-  { icon: '⚡', title: 'Menos Custo, Mais Resultado', desc: 'Elimine custos fixos com equipe interna. Nossa metodologia própria entrega o mesmo volume com menos tempo e mais precisão.' },
+  { icon: '⚡', title: 'Entrega e Volume', desc: 'Alta capacidade de entrega com volume. Reduza custos fixos com equipe interna e ganhe uma operação que escala junto com o seu escritório.' },
   { icon: '🔄', title: 'Metodologia WAC', desc: 'Processos internos únicos, sistema LUCA integrado e controle em tempo real. Seu escritório ganha escala sem perder qualidade.' },
 ];
 
-const LUCA_FEATURES = [
-  { icon: '🎯', title: 'Painel em Tempo Real', desc: 'Acompanhe o status de cada empresa — mês a mês, tarefa por tarefa. Tudo transparente.' },
-  { icon: '📁', title: 'Documentos Digitais', desc: 'LUCA DOCS: toda a documentação contábil, fiscal e trabalhista organizada e acessível.' },
-  { icon: '🔄', title: 'Portal do Contador', desc: 'Cada carteira parceira tem acesso exclusivo para acompanhar entregas e processos.' },
-  { icon: '📱', title: 'Acesso Mobile', desc: 'PWA responsivo — acesse do celular como app. Funciona em qualquer dispositivo.' },
-  { icon: '⚡', title: 'Automações com IA', desc: 'Importação de extratos, classificação contábil e processos otimizados com inteligência artificial.' },
-  { icon: '🔒', title: 'Segurança Total', desc: 'Dados criptografados, controle de acessos por níveis e backup contínuo em nuvem.' },
+const LUCA_ACESSOS = [
+  { icon: '⚙️', title: 'Área do Operador', desc: 'O mesmo painel que a WAC usa no dia a dia. Carteiras, painel anual, evoluções, pendências, extratos, particularidades e documentos — tudo para executar com velocidade.', tag: 'Execução' },
+  { icon: '📊', title: 'Área do Contador', desc: 'Seu cliente acompanha cada empresa em tempo real. Status mês a mês, evoluções, pendências e documentos — sem precisar ligar ou esperar relatório.', tag: 'Transparência' },
+  { icon: '💼', title: 'Área Administrativa', desc: 'CRM com funil de vendas, controle financeiro com DRE, simulador de orçamentos, custos rateados por carteira e margem por cliente. Gestão completa do escritório.', tag: 'Gestão' },
+];
+
+const LUCA_FUNCOES = [
+  { icon: '🎯', title: 'Painel Anual', desc: 'Visão completa de todas as empresas por mês. Pinte o status, acompanhe a evolução e identifique gargalos de um olhar.' },
+  { icon: '📝', title: 'Evoluções e Pendências', desc: 'Registre cada ação, cada pendência. Histórico completo por empresa com filtro por período e responsável.' },
+  { icon: '📁', title: 'LUCA DOCS', desc: 'Biblioteca digital organizada por setor — contábil, fiscal, folha e patrimônio. Cada empresa com suas pastas padronizadas.' },
+  { icon: '🔄', title: 'Operação e ECD', desc: 'Controle de processos operacionais e Escrituração Contábil Digital com checklist por empresa e etapa.' },
+  { icon: '⚡', title: 'Automações com IA', desc: 'Importação automática de extratos bancários, classificação contábil inteligente e integração com sistemas de domínio.' },
+  { icon: '🧮', title: 'Orçamentos e CRM', desc: 'Simule honorários para novos clientes, gerencie leads no funil de vendas e envie propostas com link de preenchimento.' },
 ];
 
 const NUMEROS = [
@@ -241,22 +247,45 @@ export default function Home() {
       </div>
 
       {/* ════════════════════════════════════════════════════════════════ */}
-      {/* DIFERENCIAIS LUCA                                              */}
+      {/* LUCA — 3 ACESSOS                                               */}
       {/* ════════════════════════════════════════════════════════════════ */}
       <div className="py-24 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-3">Diferenciais</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white">Tecnologia que faz a diferença</h2>
+          <div className="text-center mb-6">
+            <p className="text-sm font-bold text-blue-300 uppercase tracking-[0.2em] mb-3">Sistema LUCA</p>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Tudo em um único lugar</h2>
+            <p className="text-white/40 max-w-2xl mx-auto text-lg">Feito por quem está na linha de frente da contabilidade todos os dias. O LUCA reúne as funções mais utilizadas pelos escritórios em uma plataforma única — com três acessos distintos.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {LUCA_FEATURES.map((d, i) => (
-              <div key={i} className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-7 border border-white/[0.08] hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300">
-                <span className="text-3xl mb-4 block">{d.icon}</span>
-                <h3 className="font-bold text-white text-lg mb-2">{d.title}</h3>
-                <p className="text-sm text-white/40 leading-relaxed">{d.desc}</p>
+
+          {/* 3 Acessos */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+            {LUCA_ACESSOS.map((a, i) => (
+              <div key={i} className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.10] hover:bg-white/[0.12] hover:border-blue-400/30 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute top-4 right-4">
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-full">{a.tag}</span>
+                </div>
+                <span className="text-4xl mb-5 block">{a.icon}</span>
+                <h3 className="font-black text-white text-xl mb-3">{a.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed">{a.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* Funcionalidades do LUCA */}
+          <div className="mt-20">
+            <div className="text-center mb-10">
+              <p className="text-sm font-bold text-blue-300 uppercase tracking-[0.2em] mb-3">Funcionalidades</p>
+              <h3 className="text-2xl md:text-4xl font-black text-white">O que o LUCA faz por você</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {LUCA_FUNCOES.map((d, i) => (
+                <div key={i} className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-7 border border-white/[0.08] hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300">
+                  <span className="text-3xl mb-4 block">{d.icon}</span>
+                  <h3 className="font-bold text-white text-lg mb-2">{d.title}</h3>
+                  <p className="text-sm text-white/40 leading-relaxed">{d.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
