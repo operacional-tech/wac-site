@@ -107,7 +107,7 @@ export default function Home() {
       <section className="relative overflow-hidden" style={{ background: '#1a3a8f' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
 
-          <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Contabilidade · Fiscal · Pessoal · Consultoria</p>
+          <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Quarteirização Contábil + Sistema de Produtividade Próprio</p>
 
           {/* Frase principal */}
           <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
