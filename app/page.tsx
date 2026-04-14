@@ -6,19 +6,19 @@ import Image from "next/image";
 // ═══════════════════════════════════════════════════════════════════════
 
 const SERVICOS = [
-  { icon: '📊', title: 'Contabilidade', desc: 'Escrituracao, balancetes, demonstracoes contabeis e obrigacoes acessorias com precisao e agilidade.' },
-  { icon: '📋', title: 'Fiscal e Tributario', desc: 'Apuracao de impostos, planejamento tributario e compliance fiscal para Simples, Presumido e Real.' },
-  { icon: '👥', title: 'Departamento Pessoal', desc: 'Folha de pagamento, admissoes, rescisoes, eSocial e todas as rotinas trabalhistas.' },
-  { icon: '📈', title: 'Consultoria', desc: 'Analise financeira, indicadores de gestao e apoio estrategico na tomada de decisoes.' },
+  { icon: '📊', title: 'Contabilidade', desc: 'Escrituração, balancetes, demonstrações contábeis e obrigações acessórias com precisão e agilidade.' },
+  { icon: '📋', title: 'Fiscal e Tributário', desc: 'Apuração de impostos, planejamento tributário e compliance fiscal para Simples, Presumido e Real.' },
+  { icon: '👥', title: 'Departamento Pessoal', desc: 'Folha de pagamento, admissões, rescisões, eSocial e todas as rotinas trabalhistas.' },
+  { icon: '📈', title: 'Consultoria', desc: 'Análise financeira, indicadores de gestão e apoio estratégico na tomada de decisões.' },
 ];
 
 const LUCA_FEATURES = [
-  { icon: '🎯', title: 'Painel em Tempo Real', desc: 'Acompanhe o status de cada empresa — mes a mes, tarefa por tarefa. Tudo transparente.' },
-  { icon: '📁', title: 'Documentos Digitais', desc: 'LUCA DOCS: toda a documentacao contabil, fiscal e trabalhista organizada e acessivel.' },
+  { icon: '🎯', title: 'Painel em Tempo Real', desc: 'Acompanhe o status de cada empresa — mês a mês, tarefa por tarefa. Tudo transparente.' },
+  { icon: '📁', title: 'Documentos Digitais', desc: 'LUCA DOCS: toda a documentação contábil, fiscal e trabalhista organizada e acessível.' },
   { icon: '🔄', title: 'Portal do Contador', desc: 'Cada carteira parceira tem acesso exclusivo para acompanhar entregas e processos.' },
   { icon: '📱', title: 'Acesso Mobile', desc: 'PWA responsivo — acesse do celular como app. Funciona em qualquer dispositivo.' },
-  { icon: '⚡', title: 'Automacoes com IA', desc: 'Importacao de extratos, classificacao contabil e processos otimizados com inteligencia artificial.' },
-  { icon: '🔒', title: 'Seguranca Total', desc: 'Dados criptografados, controle de acessos por niveis e backup continuo em nuvem.' },
+  { icon: '⚡', title: 'Automações com IA', desc: 'Importação de extratos, classificação contábil e processos otimizados com inteligência artificial.' },
+  { icon: '🔒', title: 'Segurança Total', desc: 'Dados criptografados, controle de acessos por níveis e backup contínuo em nuvem.' },
 ];
 
 const NUMEROS = [
@@ -30,7 +30,7 @@ const NUMEROS = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: '#1a3a8f' }}>
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* NAVBAR — barra horizontal fixa, estilo LUCA                    */}
       {/* Logo esquerda, links centro, botao direita, 120px altura       */}
@@ -75,18 +75,18 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* HERO — abaixo da navbar                                        */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #111d37 0%, #0c1a3a 100%)' }}>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-28 md:pt-20 md:pb-36 text-center">
+      <section className="relative overflow-hidden" style={{ background: '#1a3a8f' }}>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20 text-center">
 
-          <p className="text-white/30 text-sm uppercase tracking-[0.3em] mb-6">Contabilidade · Fiscal · Pessoal · Consultoria</p>
+          <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Contabilidade · Fiscal · Pessoal · Consultoria</p>
 
           {/* Frase principal */}
-          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
-            Referencia no apoio para contabilidades.
+          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
+            Referência no apoio para contabilidades.
           </h1>
 
-          <p className="text-lg md:text-xl text-white/40 max-w-2xl mx-auto leading-relaxed mb-10">
-            Unimos expertise contabil ao LUCA — nosso sistema proprio que oferece transparencia total e controle em tempo real para nossos clientes e parceiros.
+          <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-8">
+            Unimos expertise contábil ao LUCA — nosso sistema próprio que oferece transparência total e controle em tempo real para nossos clientes e parceiros.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
@@ -118,19 +118,19 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* SERVICOS                                                       */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <div id="servicos" className="py-24 px-6 relative z-10">
+      <div id="servicos" className="py-16 px-6 relative z-10" style={{ background: '#1a3a8f' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-3">O que fazemos</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white">Solucoes completas</h2>
-            <p className="text-white/40 mt-4 max-w-xl mx-auto">Atendemos empresas de todos os portes e regimes tributarios com excelencia e tecnologia.</p>
+          <div className="text-center mb-10">
+            <p className="text-sm font-bold text-white/60 uppercase tracking-[0.2em] mb-3">O que fazemos</p>
+            <h2 className="text-3xl md:text-5xl font-black text-white">Soluções completas</h2>
+            <p className="text-white/50 mt-4 max-w-xl mx-auto">Atendemos empresas de todos os portes e regimes tributários com excelência e tecnologia.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICOS.map((s, i) => (
-              <div key={i} className="bg-white/[0.04] backdrop-blur-sm rounded-2xl p-7 border border-white/[0.08] hover:bg-white/[0.08] hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300">
-                <span className="text-4xl mb-5 block">{s.icon}</span>
-                <h3 className="font-bold text-white text-lg mb-2">{s.title}</h3>
-                <p className="text-sm text-white/40 leading-relaxed">{s.desc}</p>
+              <div key={i} className="bg-white/[0.08] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.12] hover:bg-white/[0.15] hover:border-white/30 hover:-translate-y-1 transition-all duration-300">
+                <span className="text-5xl mb-5 block">{s.icon}</span>
+                <h3 className="font-bold text-white text-xl mb-3">{s.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -147,14 +147,14 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 bg-blue-500/10 rounded-full px-4 py-2 mb-5">
                 <span className="w-2 h-2 rounded-full bg-blue-400"></span>
                 <span className="text-blue-400 font-bold text-sm">LUCA</span>
-                <span className="text-blue-400/60 text-xs">Sistema proprio</span>
+                <span className="text-blue-400/60 text-xs">Sistema próprio</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
-                Seu escritorio na
-                <span className="block text-blue-400">palma da mao</span>
+                Seu escritório na
+                <span className="block text-blue-400">palma da mão</span>
               </h2>
               <p className="text-white/40 leading-relaxed mb-8 text-lg">
-                O LUCA e o sistema que desenvolvemos para dar visibilidade total aos nossos clientes. Cada carteira parceira acompanha em tempo real o andamento dos servicos — sem ligar, sem esperar.
+                O LUCA é o sistema que desenvolvemos para dar visibilidade total aos nossos clientes. Cada carteira parceira acompanha em tempo real o andamento dos serviços — sem ligar, sem esperar.
               </p>
               <div className="space-y-5">
                 {LUCA_FEATURES.slice(0, 3).map((d, i) => (
@@ -180,7 +180,7 @@ export default function Home() {
 
               <div className="bg-white/5 rounded-xl p-5 mb-4">
                 <div className="flex gap-2 mb-4">
-                  {['Painel Anual', 'Pendencias', 'Particularidades', 'Extratos'].map((t, i) => (
+                  {['Painel Anual', 'Pendências', 'Particularidades', 'Extratos'].map((t, i) => (
                     <span key={i} className={`text-[11px] px-3 py-1.5 rounded-lg font-medium ${i === 0 ? 'bg-white/10 text-white' : 'text-white/25'}`}>{t}</span>
                   ))}
                 </div>
@@ -218,7 +218,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm font-bold text-blue-400 uppercase tracking-[0.2em] mb-3">Diferenciais</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white">Tecnologia que faz a diferenca</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white">Tecnologia que faz a diferença</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {LUCA_FEATURES.map((d, i) => (
@@ -242,7 +242,7 @@ export default function Home() {
             Pronto para modernizar sua contabilidade?
           </h2>
           <p className="text-white/40 mb-10 text-lg max-w-xl mx-auto">
-            Entre em contato e descubra como a WAC + LUCA podem dar transparencia e agilidade ao seu negocio.
+            Entre em contato e descubra como a WAC + LUCA podem dar transparência e agilidade ao seu negócio.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="https://wa.me/5547992472740" target="_blank" rel="noopener noreferrer"
