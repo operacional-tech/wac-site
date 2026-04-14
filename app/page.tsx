@@ -1,4 +1,6 @@
+'use client';
 import Image from "next/image";
+import { useState } from "react";
 
 // ═══════════════════════════════════════════════════════════════════════
 // WAC APOIO CONTABIL — Landing Page
@@ -29,6 +31,8 @@ const NUMEROS = [
 ];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen" style={{ background: '#1a3a8f' }}>
       {/* ════════════════════════════════════════════════════════════════ */}
@@ -66,11 +70,31 @@ export default function Home() {
 
           {/* Links direita */}
           <div className="hidden md:flex items-center gap-10">
-            <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Portal</a>
-            <a href="https://luca.wacapoio.com.br/login"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl text-base font-bold transition-all">
-              Acessar LUCA
-            </a>
+            <div className="relative"
+              onMouseEnter={() => setMenuOpen(true)}
+              onMouseLeave={() => setMenuOpen(false)}>
+              <button onClick={() => setMenuOpen(!menuOpen)}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl text-base font-bold transition-all flex items-center gap-2">
+                Acessar LUCA
+                <svg className={`w-4 h-4 transition-transform ${menuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              {menuOpen && (
+                <div className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+                  <a href="https://luca.wacapoio.com.br/cliente/login"
+                    className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors border-b border-gray-50">
+                    Área do Contador
+                  </a>
+                  <a href="https://luca.wacapoio.com.br/login"
+                    className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors border-b border-gray-50">
+                    Área do Operador
+                  </a>
+                  <a href="https://luca.wacapoio.com.br/administrativo/login"
+                    className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors">
+                    Área Administrativa
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </nav>
