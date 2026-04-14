@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   title: "WAC Apoio Contabil — Contabilidade com Tecnologia",
   description: "Escritorio contabil com sistema proprio LUCA. Contabilidade, fiscal, departamento pessoal e consultoria com transparencia total e controle em tempo real.",
   keywords: ["contabilidade", "escritorio contabil", "WAC", "LUCA", "apoio contabil", "contabilidade digital"],
+  icons: {
+    icon: '/logo-wac.jpg',
+    apple: '/logo-wac.jpg',
+  },
   openGraph: {
     title: "WAC Apoio Contabil",
     description: "Contabilidade com tecnologia e precisao. Sistema LUCA com controle em tempo real.",
