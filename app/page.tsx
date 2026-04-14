@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative" style={{ background: '#1a3a8f' }}>
       {/* Estrelas e constelações — fundo de todo o site */}
-      <div className="fixed inset-0 pointer-events-none z-0">
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           {/* Estrelas — espalhadas por toda a tela */}
           {[[2,8],[5,22],[8,35],[11,48],[14,62],[17,75],[20,88],
@@ -79,7 +79,7 @@ export default function Home() {
       {/* NAVBAR — barra horizontal fixa, estilo LUCA                    */}
       {/* Logo esquerda, links centro, botao direita, 120px altura       */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <nav className="relative" style={{ background: '#111d37', height: '180px', zIndex: 50 }}>
+      <nav className="relative" style={{ background: '#111d37', height: '180px', zIndex: 10 }}>
         {/* Estrelas e constelacoes — igual LUCA */}
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           {[[2,30],[5,70],[8,45],[11,20],[14,80],[17,55],[20,15],[22,85],[26,40],[29,65],[32,25],[35,90],[38,50],[41,10],[44,75],[47,35],[50,60],[53,20],[56,85],[59,45],[62,70],[65,15],[67,55],[70,80],[73,30],[75,65],[78,40],[81,85],[83,20],[86,60],[88,35],[90,75],[92,50],[94,15],[96,70],[98,40]].map(([x,y], i) => (
@@ -144,7 +144,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* QUARTEIRIZACAO — primeira coisa que o visitante ve              */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section id="servicos" className="relative overflow-hidden" style={{ background: '#111d37' }}>
+      <section id="servicos" className="relative" style={{ zIndex: 2 }}>
         <div className="relative z-10 max-w-6xl mx-auto px-6 pt-14 pb-8 md:pt-20 md:pb-10 text-center">
           <p className="text-blue-300/60 text-sm font-bold uppercase tracking-[0.2em] mb-4">Quarteirização contábil e fiscal</p>
           <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-5">
@@ -190,7 +190,7 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════════ */}
       {/* LUCA — bloco unico                                             */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <div id="luca" className="py-16 px-6 relative z-10" style={{ background: '#1a3a8f' }}>
+      <div id="luca" className="py-16 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Titulo */}
           <div className="text-center mb-14">
