@@ -32,37 +32,42 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* ════════════════════════════════════════════════════════════════ */}
-      {/* NAVBAR — mesmo fundo da logo, com logo centralizada            */}
+      {/* NAVBAR — barra horizontal fixa, estilo LUCA                    */}
+      {/* Logo esquerda, links centro, botao direita, 120px altura       */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <nav className="relative overflow-hidden" style={{ background: '#111d37' }}>
-        {/* Links no topo */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-4 flex items-center justify-between">
-          <div className="hidden md:flex items-center gap-6">
-            <a href="#servicos" className="text-white/50 hover:text-white text-sm font-medium transition-colors">Servicos</a>
-            <a href="#luca" className="text-white/50 hover:text-white text-sm font-medium transition-colors">LUCA</a>
-            <a href="#contato" className="text-white/50 hover:text-white text-sm font-medium transition-colors">Contato</a>
+      <nav className="relative overflow-hidden" style={{ background: '#111d37', height: '120px' }}>
+        {/* Estrelas e constelacoes — igual LUCA */}
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          {[[2,30],[5,70],[8,45],[11,20],[14,80],[17,55],[20,15],[22,85],[26,40],[29,65],[32,25],[35,90],[38,50],[41,10],[44,75],[47,35],[50,60],[53,20],[56,85],[59,45],[62,70],[65,15],[67,55],[70,80],[73,30],[75,65],[78,40],[81,85],[83,20],[86,60],[88,35],[90,75],[92,50],[94,15],[96,70],[98,40]].map(([x,y], i) => (
+            <circle key={`s${i}`} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 3) * 0.5} fill="white" opacity={0.12 + (i % 5) * 0.06} />
+          ))}
+          {[[2,30,5,70],[5,70,8,45],[8,45,14,80],[26,40,32,25],[32,25,38,50],[53,20,59,45],[62,70,67,55],[73,30,78,40],[83,20,88,35],[90,75,96,70]].map(([x1,y1,x2,y2], i) => (
+            <line key={`l${i}`} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.5" opacity="0.05" />
+          ))}
+        </svg>
+
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-10 flex items-center">
+          {/* Logo esquerda */}
+          <div className="shrink-0 mr-8">
+            <Image src="/logo-wac.jpg" alt="WAC Apoio Contabil" width={90} height={90} priority
+              style={{ borderRadius: '12px' }} />
           </div>
-          <div className="flex items-center gap-3 ml-auto md:ml-0">
+
+          {/* Links centrais */}
+          <div className="hidden md:flex items-center gap-8 flex-1">
+            <a href="#servicos" className="text-white/60 hover:text-white text-sm font-medium transition-colors">Servicos</a>
+            <a href="#luca" className="text-white/60 hover:text-white text-sm font-medium transition-colors">LUCA</a>
+            <a href="#contato" className="text-white/60 hover:text-white text-sm font-medium transition-colors">Contato</a>
+          </div>
+
+          {/* Direita */}
+          <div className="flex items-center gap-4 ml-auto">
             <a href="https://luca.wacapoio.com.br/cliente/login" className="text-white/40 hover:text-white text-sm transition-colors hidden md:block">Portal</a>
             <a href="https://luca.wacapoio.com.br/login"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all">
               Acessar LUCA
             </a>
           </div>
-        </div>
-
-        {/* Logo centralizada */}
-        <div className="relative z-10 flex justify-center py-6">
-          <Image src="/logo-wac.jpg" alt="WAC Apoio Contabil" width={220} height={220}
-            className="drop-shadow-2xl" priority />
-        </div>
-
-        {/* Frase dentro da navbar */}
-        <div className="relative z-10 text-center pb-8">
-          <h1 className="text-2xl md:text-4xl font-black text-white tracking-tight">
-            Referencia no apoio para contabilidades.
-          </h1>
-          <p className="text-white/30 text-sm mt-3 max-w-lg mx-auto">Contabilidade · Fiscal · Pessoal · Consultoria</p>
         </div>
       </nav>
 
@@ -71,6 +76,8 @@ export default function Home() {
       {/* ════════════════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #111d37 0%, #0c1a3a 100%)' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-28 md:pt-20 md:pb-36 text-center">
+
+          <p className="text-white/30 text-sm uppercase tracking-[0.3em] mb-6">Contabilidade · Fiscal · Pessoal · Consultoria</p>
 
           {/* Frase principal */}
           <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
