@@ -149,68 +149,23 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════════════════════════════ */}
-      {/* HERO LUCA — abaixo da quarteirizacao                           */}
+      {/* LUCA — bloco unico                                             */}
       {/* ════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden" style={{ background: '#1a3a8f' }}>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
-
-          <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-5">Conheça o LUCA</p>
-
-          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-6">
-            Seu escritório, nossa tecnologia.
-          </h2>
-
-          <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-8">
-            O LUCA é o sistema próprio da WAC — feito por quem vive a rotina contábil todos os dias. Controle total, transparência para o cliente e gestão inteligente do escritório.
-          </p>
-
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a href="https://wa.me/message/7VFXJWAEUBGOE1" target="_blank" rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-600 text-white px-7 py-3.5 rounded-2xl font-bold text-sm transition-all shadow-lg shadow-green-500/20 flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Fale conosco
-            </a>
-            <a href="#luca"
-              className="bg-white/5 hover:bg-white/10 text-white px-7 py-3.5 rounded-2xl font-bold text-sm transition-all border border-white/10">
-              Conhecer o LUCA →
-            </a>
-          </div>
-        </div>
-
-      </section>
-      {/* ════════════════════════════════════════════════════════════════ */}
-      {/* LUCA                                                           */}
-      {/* ════════════════════════════════════════════════════════════════ */}
-      <div id="luca" className="py-24 px-6 relative z-10">
+      <div id="luca" className="py-16 px-6 relative z-10" style={{ background: '#1a3a8f' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-blue-500/10 rounded-full px-4 py-2 mb-5">
-                <span className="w-2 h-2 rounded-full bg-blue-400"></span>
-                <span className="text-blue-400 font-bold text-sm">LUCA</span>
-                <span className="text-blue-400/60 text-xs">Sistema próprio</span>
-              </div>
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
-                Seu escritório na
-                <span className="block text-blue-400">palma da mão</span>
-              </h2>
-              <p className="text-white/40 leading-relaxed mb-8 text-lg">
-                O LUCA é o sistema que desenvolvemos para dar visibilidade total aos nossos clientes. Cada carteira parceira acompanha em tempo real o andamento dos serviços — sem ligar, sem esperar.
-              </p>
-              <div className="space-y-5">
-                {LUCA_FUNCOES.slice(0, 3).map((d, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <span className="text-2xl mt-0.5 shrink-0">{d.icon}</span>
-                    <div>
-                      <h4 className="font-bold text-white">{d.title}</h4>
-                      <p className="text-sm text-white/40 mt-0.5">{d.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Titulo */}
+          <div className="text-center mb-14">
+            <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-4">Conheça o LUCA</p>
+            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-5">
+              Seu escritório, nossa tecnologia.
+            </h2>
+            <p className="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed">
+              O LUCA é o sistema próprio da WAC — feito por quem vive a rotina contábil todos os dias. Controle total, transparência para o cliente e gestão inteligente do escritório.
+            </p>
+          </div>
 
-            {/* Mock do sistema LUCA */}
+          {/* Mock do sistema */}
+          <div className="max-w-3xl mx-auto mb-14">
             <div className="bg-white/[0.03] backdrop-blur-sm rounded-3xl p-7 border border-white/[0.08] shadow-2xl">
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-3 h-3 rounded-full bg-red-500/40"></div>
@@ -218,7 +173,6 @@ export default function Home() {
                 <div className="w-3 h-3 rounded-full bg-green-500/40"></div>
                 <span className="text-white/20 text-xs ml-3 font-mono">luca.wacapoio.com.br</span>
               </div>
-
               <div className="bg-white/5 rounded-xl p-5 mb-4">
                 <div className="flex gap-2 mb-4">
                   {['Painel Anual', 'Pendências', 'Particularidades', 'Extratos'].map((t, i) => (
@@ -233,11 +187,10 @@ export default function Home() {
                   })}
                 </div>
               </div>
-
               <div className="grid grid-cols-4 gap-2">
                 {[
                   { label: 'Zerado', val: '45', color: 'text-green-400' },
-                  { label: 'Lancado', val: '28', color: 'text-yellow-400' },
+                  { label: 'Lançado', val: '28', color: 'text-yellow-400' },
                   { label: 'Fazendo', val: '12', color: 'text-purple-400' },
                   { label: 'Pendente', val: '3', color: 'text-pink-400' },
                 ].map((k, i) => (
@@ -249,22 +202,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* ════════════════════════════════════════════════════════════════ */}
-      {/* LUCA — 3 ACESSOS                                               */}
-      {/* ════════════════════════════════════════════════════════════════ */}
-      <div className="py-24 px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-6">
-            <p className="text-sm font-bold text-blue-300 uppercase tracking-[0.2em] mb-3">Sistema LUCA</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4">Tudo em um único lugar</h2>
-            <p className="text-white/40 max-w-2xl mx-auto text-lg">Feito por quem está na linha de frente da contabilidade todos os dias. O LUCA reúne as funções mais utilizadas pelos escritórios em uma plataforma única — com três acessos distintos.</p>
-          </div>
 
           {/* 3 Acessos */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Três acessos, um sistema</h3>
+            <p className="text-white/40 max-w-xl mx-auto">Cada perfil com as ferramentas certas para sua função.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {LUCA_ACESSOS.map((a, i) => (
               <div key={i} className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.10] hover:bg-white/[0.12] hover:border-blue-400/30 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
                 <div className="absolute top-4 right-4">
@@ -278,7 +222,7 @@ export default function Home() {
           </div>
 
           {/* Funcionalidades do LUCA */}
-          <div className="mt-20">
+          <div className="mt-14">
             <div className="text-center mb-10">
               <p className="text-sm font-bold text-blue-300 uppercase tracking-[0.2em] mb-3">Funcionalidades</p>
               <h3 className="text-2xl md:text-4xl font-black text-white">O que o LUCA faz por você</h3>
