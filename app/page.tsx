@@ -142,12 +142,6 @@ export default function Home() {
       <section id="servicos" className="relative" style={{ zIndex: 2 }}>
         <div className="relative z-10 max-w-6xl mx-auto px-6 pt-14 pb-8 md:pt-20 md:pb-10 text-center">
           <p className="text-blue-300/60 text-sm font-bold uppercase tracking-[0.2em] mb-4">Quarteirização contábil e fiscal</p>
-          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-5">
-            Referência no apoio para contabilidades.
-          </h1>
-          <p className="text-white/60 text-xl md:text-2xl font-semibold mb-4 italic">
-            Não somos uma contabilidade, apoiamos contabilidades.
-          </p>
           <p className="text-white/40 max-w-2xl mx-auto text-lg mb-8">
             Apoio para a execução contábil e fiscal do seu escritório — 100% alinhada com sua forma de trabalhar, com metodologia própria e sistema integrado.
           </p>
