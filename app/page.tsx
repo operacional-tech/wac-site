@@ -30,7 +30,6 @@ const LUCA_FUNCOES = [
 ];
 
 const NUMEROS = [
-  { valor: '1.500+', label: 'Empresas em operação' },
   { valor: '100%', label: 'Setores em dia e padronizados' },
   { valor: '24/7', label: 'Controle em tempo real via LUCA' },
   { valor: '✓', label: 'Equipe consolidada + metodologia única' },
@@ -165,7 +164,7 @@ export default function Home() {
 
         {/* KPIs */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 pb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {NUMEROS.map((n, i) => (
               <div key={i} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 text-center">
                 <p className="text-3xl md:text-4xl font-black text-white">{n.valor}</p>
