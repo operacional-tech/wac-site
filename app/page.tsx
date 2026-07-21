@@ -95,7 +95,7 @@ export default function Home() {
           {/* Links esquerda */}
           <div className="hidden md:flex items-center gap-10">
             <a href="#servicos" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Serviços</a>
-            <a href="#luca" className="text-white/70 hover:text-white text-base font-semibold transition-colors">LUCA</a>
+            <a href="https://luca.wacapoio.com.br" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white text-base font-semibold transition-colors">LUCA</a>
             <a href="#contato" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Contato</a>
           </div>
 
@@ -399,7 +399,7 @@ export default function Home() {
             <div />
             <div className="flex gap-8 text-sm">
               <a href="#servicos" className="hover:text-white transition-colors">Servicos</a>
-              <a href="#luca" className="hover:text-white transition-colors">LUCA</a>
+              <a href="https://luca.wacapoio.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LUCA</a>
               <a href="#contato" className="hover:text-white transition-colors">Contato</a>
               <a href="https://luca.wacapoio.com.br/login" className="hover:text-white transition-colors">Sistema</a>
             </div>
