@@ -1,6 +1,5 @@
 'use client';
 import Image from "next/image";
-import { useState } from "react";
 
 // ═══════════════════════════════════════════════════════════════════════
 // WAC APOIO CONTABIL — Landing Page
@@ -12,12 +11,6 @@ const SERVICOS = [
   { icon: '📋', title: 'Operação Fiscal Integrada', desc: 'Apuração de impostos, escrituração fiscal, obrigações acessórias e compliance tributário para todos os regimes, com processo padronizado.' },
   { icon: '💲', title: 'Menos Custo, Mais Volume', desc: 'Reduza custos fixos com equipe interna. Entregamos mais volume com a mesma qualidade — sua operação escala sem aumentar estrutura.' },
   { icon: '🔄', title: 'Metodologia WAC', desc: 'Processos internos únicos, sistema LUCA integrado e controle em tempo real. Seu escritório ganha escala sem perder qualidade.' },
-];
-
-const LUCA_ACESSOS = [
-  { icon: '⚙️', title: 'Área do Operador', desc: 'O mesmo painel que a WAC usa no dia a dia. Carteiras, painel anual, evoluções, pendências, extratos, particularidades e documentos — tudo para executar com velocidade.', tag: 'Execução' },
-  { icon: '📊', title: 'Área do Contador', desc: 'Seu cliente acompanha cada empresa em tempo real. Status mês a mês, evoluções, pendências e documentos — sem precisar ligar ou esperar relatório.', tag: 'Transparência' },
-  { icon: '💼', title: 'Área Administrativa', desc: 'CRM com funil de vendas, controle financeiro com DRE, simulador de orçamentos, custos rateados por carteira e margem por cliente. Gestão completa do escritório.', tag: 'Gestão' },
 ];
 
 const LUCA_FUNCOES = [
@@ -36,8 +29,6 @@ const NUMEROS = [
 ];
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen relative" style={{ background: '#1a3a8f' }}>
       {/* Estrelas e constelações — fundo de todo o site */}
@@ -104,33 +95,11 @@ export default function Home() {
 
           {/* Links direita */}
           <div className="hidden md:flex items-center gap-10">
-            <div className="relative"
-              onMouseEnter={() => setMenuOpen(true)}
-              onMouseLeave={() => setMenuOpen(false)}>
-              <button onClick={() => setMenuOpen(!menuOpen)}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl text-base font-bold transition-all flex items-center gap-2">
-                Acessar LUCA
-                <svg className={`w-4 h-4 transition-transform ${menuOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-              </button>
-              {menuOpen && (
-                <div className="absolute right-0 top-full pt-1 w-56 z-50">
-                <div className="bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden">
-                  <a href="https://luca.wacapoio.com.br/cliente/login" target="_blank" rel="noopener noreferrer"
-                    className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors border-b border-gray-50">
-                    Área do Contador
-                  </a>
-                  <a href="https://luca.wacapoio.com.br/login" target="_blank" rel="noopener noreferrer"
-                    className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors border-b border-gray-50">
-                    Área do Operador
-                  </a>
-                  <a href="https://luca.wacapoio.com.br/administrativo/login" target="_blank" rel="noopener noreferrer"
-                    className="block px-5 py-3.5 text-gray-700 hover:bg-blue-50 hover:text-blue-700 text-sm font-medium transition-colors">
-                    Área Administrativa
-                  </a>
-                </div>
-                </div>
-              )}
-            </div>
+            <a href="https://luca.wacapoio.com.br/login" target="_blank" rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl text-base font-bold transition-all flex items-center gap-2">
+              Acessar LUCA
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
           </div>
         </div>
       </nav>
