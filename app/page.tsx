@@ -335,7 +335,7 @@ function Navbar() {
     [83, 20, 88, 35], [90, 75, 96, 70],
   ];
   return (
-    <header className="sticky top-0 z-40 shadow-lg relative overflow-hidden" style={{ background: '#0c1a3a', height: '160px' }}>
+    <header className="sticky top-0 z-40 shadow-lg relative overflow-hidden" style={{ background: '#0c1a3a', height: '100px' }}>
       <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         {STARS.map(([x, y], i) => (
           <circle key={`s${i}`} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 3) * 0.5} fill="white" opacity={0.12 + (i % 5) * 0.06} />
@@ -350,8 +350,8 @@ function Navbar() {
         <Image
           src="/logo-wac.jpg"
           alt="WAC Apoio Contábil"
-          width={260}
-          height={260}
+          width={160}
+          height={160}
           priority
           style={{
             mask: 'radial-gradient(circle at center, black 20%, transparent 65%)',
