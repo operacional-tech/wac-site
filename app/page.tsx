@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 // ═══════════════════════════════════════════════════════════════════════
 // WAC APOIO CONTÁBIL — Landing wacapoio.com.br
@@ -334,7 +335,7 @@ function Navbar() {
     [83, 20, 88, 35], [90, 75, 96, 70],
   ];
   return (
-    <header className="sticky top-0 z-40 shadow-lg relative overflow-hidden" style={{ background: '#0c1a3a' }}>
+    <header className="sticky top-0 z-40 shadow-lg relative overflow-hidden" style={{ background: '#0c1a3a', height: '160px' }}>
       <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         {STARS.map(([x, y], i) => (
           <circle key={`s${i}`} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 3) * 0.5} fill="white" opacity={0.12 + (i % 5) * 0.06} />
@@ -343,38 +344,45 @@ function Navbar() {
           <line key={`l${i}`} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.5" opacity="0.06" />
         ))}
       </svg>
-      <div className="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between relative z-10">
-        <a href="#hero" className="flex items-center gap-3 group">
-          {/* Logo — placeholder texto pra ser leve; troca por Image real se quiser */}
-          <div className="flex flex-col leading-none">
-            <span className="text-[10px] text-blue-300/70 tracking-[0.3em] uppercase font-bold">WAC</span>
-            <span className="text-white text-2xl font-black tracking-tight group-hover:opacity-90 transition-opacity">Apoio Contábil</span>
-          </div>
-        </a>
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
-          <a href="#pilares" className="text-slate-300 hover:text-white transition-colors">Serviços</a>
-          <a href="#luca" className="text-slate-300 hover:text-white transition-colors">LUCA</a>
-          <a href="#contato" className="text-slate-300 hover:text-white transition-colors">Contato</a>
+
+      {/* Logo original centralizado com mask radial (fusão com o navy) */}
+      <a href="#hero" className="absolute inset-0 flex items-center justify-center z-10" aria-label="WAC — início">
+        <Image
+          src="/logo-wac.jpg"
+          alt="WAC Apoio Contábil"
+          width={260}
+          height={260}
+          priority
+          style={{
+            mask: 'radial-gradient(circle at center, black 20%, transparent 65%)',
+            WebkitMask: 'radial-gradient(circle at center, black 20%, transparent 65%)',
+          }}
+        />
+      </a>
+
+      <div className="relative z-20 max-w-6xl mx-auto h-full px-8 flex items-center justify-between pointer-events-none">
+        {/* Links esquerda */}
+        <nav className="hidden md:flex items-center gap-8 pointer-events-auto">
+          <a href="#pilares" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">Serviços</a>
+          <a href="#luca" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">LUCA</a>
+          <a href="#contato" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">Contato</a>
+        </nav>
+
+        {/* Placeholder pro centro (não empurra o logo) */}
+        <div className="hidden md:block" />
+
+        {/* CTA direita */}
+        <div className="ml-auto pointer-events-auto">
           <a
             href="https://luca.wacapoio.com.br/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-5 py-2.5 rounded-lg shadow-md transition-transform hover:scale-105 flex items-center gap-2"
+            className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-5 py-2.5 rounded-lg shadow-md transition-transform hover:scale-105 inline-flex items-center gap-2 text-sm"
           >
             Acessar LUCA
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
-        </nav>
-        <div className="md:hidden">
-          <a
-            href="https://luca.wacapoio.com.br/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg"
-          >
-            LUCA
           </a>
         </div>
       </div>
