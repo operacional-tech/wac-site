@@ -1,396 +1,398 @@
 'use client';
-import Image from "next/image";
 
 // ═══════════════════════════════════════════════════════════════════════
-// WAC APOIO CONTABIL — Landing Page
-// wacapoio.com.br
+// WAC APOIO CONTÁBIL — Landing wacapoio.com.br
+// Redesign: navbar navy (mesma pegada do LUCA) + corpo branco + foco em
+// quarteirização contábil/fiscal e otimização de processos/custo.
+// LUCA aparece embedded como diferencial da WAC.
 // ═══════════════════════════════════════════════════════════════════════
 
-const SERVICOS = [
-  { icon: '🏢', title: 'Operação Contábil Completa', desc: 'Assumimos toda a rotina contábil do seu escritório — classificações, conciliações, balancetes e demonstrações — como uma extensão da sua equipe.' },
-  { icon: '📋', title: 'Operação Fiscal Integrada', desc: 'Apuração de impostos, escrituração fiscal, obrigações acessórias e compliance tributário para todos os regimes, com processo padronizado.' },
-  { icon: '💲', title: 'Menos Custo, Mais Volume', desc: 'Reduza custos fixos com equipe interna. Entregamos mais volume com a mesma qualidade — sua operação escala sem aumentar estrutura.' },
-  { icon: '🔄', title: 'Metodologia WAC', desc: 'Processos internos únicos, sistema LUCA integrado e controle em tempo real. Seu escritório ganha escala sem perder qualidade.' },
+const PILARES = [
+  {
+    tag: 'Contábil',
+    tagCls: 'bg-blue-50 text-blue-700 border-blue-200',
+    titulo: 'Operação Contábil Completa',
+    desc: 'Assumimos a rotina contábil do seu escritório — classificações, conciliações, balancetes e demonstrações — como extensão do seu time.',
+    itens: [
+      'Classificação e conciliação bancária',
+      'Balancete mensal + análise por IA',
+      'ECD / ECF com controle anual',
+      'Padronização de plano de contas',
+      'Fechamento no prazo, sempre',
+    ],
+  },
+  {
+    tag: 'Fiscal',
+    tagCls: 'bg-rose-50 text-rose-700 border-rose-200',
+    titulo: 'Operação Fiscal Integrada',
+    desc: 'Apuração de impostos, escrituração fiscal e obrigações acessórias pra todos os regimes — SN, LP e LR — com processo padronizado.',
+    itens: [
+      'Fluxo mensal por regime tributário',
+      'SPED · DCTFWeb · EFD-Reinf · DARE',
+      'Retenções (IRRF · CSRF · INSS · PIS-COFINS)',
+      'Formulário de particularidades por empresa',
+      'Metodologia 7em7 pra fechar no dia certo',
+    ],
+  },
 ];
 
-const LUCA_FUNCOES = [
-  { icon: '🎯', title: 'Painel Anual', desc: 'Visão completa de todas as empresas por mês. Pinte o status, acompanhe a evolução e identifique gargalos de um olhar.' },
-  { icon: '📝', title: 'Evoluções e Pendências', desc: 'Registre cada ação, cada pendência. Histórico completo por empresa com filtro por período e responsável.' },
-  { icon: '📁', title: 'LUCA DOCS', desc: 'Biblioteca digital organizada por setor — contábil, fiscal, folha e patrimônio. Cada empresa com suas pastas padronizadas.' },
-  { icon: '🔄', title: 'Operação e ECD', desc: 'Controle de processos operacionais e Escrituração Contábil Digital com checklist por empresa e etapa.' },
-  { icon: '⚡', title: 'Automações com IA', desc: 'Importação automática de extratos bancários, classificação contábil inteligente e integração com sistemas de domínio.' },
-  { icon: '🧮', title: 'Orçamentos e CRM', desc: 'Simule honorários para novos clientes, gerencie leads no funil de vendas e envie propostas com link de preenchimento.' },
+const OTIMIZACOES = [
+  {
+    titulo: 'Menos custo fixo',
+    desc: 'Reduza o peso da folha interna. Você paga por entrega, não por presença.',
+  },
+  {
+    titulo: 'Mais volume, mesma qualidade',
+    desc: 'Time treinado + método próprio = você atende mais carteiras sem crescer estrutura.',
+  },
+  {
+    titulo: 'Foco no que só o dono faz',
+    desc: 'A rotina operacional sai do seu ombro. Você foca em cliente, comercial e crescimento.',
+  },
+  {
+    titulo: 'Processo que não depende de pessoa',
+    desc: 'Metodologia WAC + LUCA garantem continuidade mesmo com troca de time.',
+  },
 ];
 
-const NUMEROS = [
-  { valor: '100%', label: 'Setores em dia e padronizados' },
-  { valor: '24/7', label: 'Controle em tempo real via LUCA' },
-  { valor: '✓', label: 'Equipe consolidada + metodologia única' },
+const LUCA_FEATURES = [
+  { titulo: 'Painel Anual', desc: 'Cada empresa × cada mês numa grade única — status pintado por cor, avanço visível de um olhar.' },
+  { titulo: 'Evoluções diárias', desc: 'Time descreve o que fez em cada carteira. Você enxerga produtividade em tempo real.' },
+  { titulo: 'ECD / ECF centralizado', desc: 'Empresas obrigadas (LP, LR, Imune, Isenta, 3º Setor) com status anual no Hub de Líderes.' },
+  { titulo: 'LUCA DOCS', desc: 'Extratos, balancetes, contratos e certificados digitais organizados por empresa e mês.' },
+  { titulo: 'Agentes de IA', desc: 'Análise de balancete, PDF→OFX, análise de razão — a IA rala nos gargalos.' },
+  { titulo: 'Portal do Contador', desc: 'Seu cliente acompanha status, docs e pendências sem precisar ligar.' },
 ];
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative" style={{ background: '#1a3a8f' }}>
-      {/* Estrelas e constelações — fundo de todo o site */}
-      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1 }}>
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          {/* Estrelas — espalhadas por toda a tela */}
-          {[[3,8],[8,18],[15,5],[12,30],[6,42],[18,55],[10,70],[20,82],
-            [25,12],[30,25],[22,38],[35,48],[28,62],[38,75],[32,90],
-            [42,8],[48,22],[45,35],[52,50],[40,58],[55,68],[50,85],
-            [58,12],[62,28],[65,42],[60,55],[68,70],[72,80],[55,92],
-            [75,8],[78,20],[82,35],[85,48],[80,60],[88,72],[92,85],
-            [95,15],[90,30],[98,45],[93,58],[96,70],[88,42],
-            [4,55],[16,65],[24,48],[36,32],[44,72],[56,18],[64,82],
-            [76,38],[84,65],[92,22],[7,85],[33,15],[47,62],[69,10],
-            [81,52],[97,32],[14,92],[42,42],[66,55],[86,8]].map(([x,y], i) => (
-            <circle key={`gs${i}`} cx={`${x}%`} cy={`${y}%`} r={0.7 + (i % 3) * 0.5} fill="white" opacity={0.12 + (i % 5) * 0.05} />
-          ))}
-          {/* Constelações — linhas curtas e anguladas, naturais */}
-          {[[3,8,8,18],[8,18,15,5],[12,30,6,42],[18,55,10,70],
-            [25,12,30,25],[30,25,22,38],[35,48,28,62],
-            [42,8,48,22],[48,22,45,35],[52,50,55,68],
-            [58,12,62,28],[62,28,65,42],[68,70,72,80],
-            [75,8,78,20],[78,20,82,35],[85,48,80,60],
-            [95,15,90,30],[90,30,88,42],
-            [4,55,16,65],[24,48,36,32],[44,72,56,18],
-            [76,38,84,65],[7,85,14,92],[33,15,42,42],
-            [66,55,69,10],[81,52,86,8]].map(([x1,y1,x2,y2], i) => (
-            <line key={`gl${i}`} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.4" opacity="0.06" />
-          ))}
-        </svg>
-      </div>
-      {/* ════════════════════════════════════════════════════════════════ */}
-      {/* NAVBAR — barra horizontal fixa, estilo LUCA                    */}
-      {/* Logo esquerda, links centro, botao direita, 120px altura       */}
-      {/* ════════════════════════════════════════════════════════════════ */}
-      <nav className="relative" style={{ background: '#111d37', height: '180px', zIndex: 10 }}>
-        {/* Estrelas e constelacoes — igual LUCA */}
-        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          {[[2,30],[5,70],[8,45],[11,20],[14,80],[17,55],[20,15],[22,85],[26,40],[29,65],[32,25],[35,90],[38,50],[41,10],[44,75],[47,35],[50,60],[53,20],[56,85],[59,45],[62,70],[65,15],[67,55],[70,80],[73,30],[75,65],[78,40],[81,85],[83,20],[86,60],[88,35],[90,75],[92,50],[94,15],[96,70],[98,40]].map(([x,y], i) => (
-            <circle key={`s${i}`} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 3) * 0.5} fill="white" opacity={0.12 + (i % 5) * 0.06} />
-          ))}
-          {[[2,30,5,70],[5,70,8,45],[8,45,14,80],[26,40,32,25],[32,25,38,50],[53,20,59,45],[62,70,67,55],[73,30,78,40],[83,20,88,35],[90,75,96,70]].map(([x1,y1,x2,y2], i) => (
-            <line key={`l${i}`} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.5" opacity="0.05" />
-          ))}
-        </svg>
+    <div className="min-h-screen bg-white text-slate-900">
+      {/* ═══ NAVBAR NAVY com estrelas — mesma pegada do LUCA ═══ */}
+      <Navbar />
 
-        {/* Logo integrada no centro da navbar — mask forte para fundir 100% */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <Image src="/logo-wac.jpg" alt="" width={280} height={280} priority
-            style={{ mask: 'radial-gradient(circle at center, black 20%, transparent 65%)', WebkitMask: 'radial-gradient(circle at center, black 20%, transparent 65%)' }} />
-        </div>
-
-        <div className="relative z-10 h-full max-w-7xl mx-auto px-8 flex items-center justify-center gap-14">
-
-          {/* Links esquerda */}
-          <div className="hidden md:flex items-center gap-10">
-            <a href="#servicos" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Serviços</a>
-            <a href="https://luca.wacapoio.com.br" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white text-base font-semibold transition-colors">LUCA</a>
-            <a href="#contato" className="text-white/70 hover:text-white text-base font-semibold transition-colors">Contato</a>
-          </div>
-
-          {/* Espaço para logo no centro */}
-          <div className="w-56" />
-
-          {/* Links direita */}
-          <div className="hidden md:flex items-center gap-10">
-            <a href="https://luca.wacapoio.com.br/login" target="_blank" rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl text-base font-bold transition-all flex items-center gap-2">
-              Acessar LUCA
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
+      {/* ═══ HERO ═══ */}
+      <section id="hero" className="relative overflow-hidden">
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-blue-100 blur-3xl opacity-50 pointer-events-none" />
+        <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-indigo-100 blur-3xl opacity-50 pointer-events-none" />
+        <div className="relative max-w-6xl mx-auto px-6 py-16 md:py-24">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Quarteirização Contábil e Fiscal
+            </span>
+            <h1 className="text-4xl md:text-6xl font-black leading-[1.05] tracking-tight text-slate-900 mb-5">
+              Otimize processos e{' '}
+              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
+                reduza o custo do seu escritório contábil.
+              </span>
+            </h1>
+            <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
+              A <strong>WAC</strong> assume a operação contábil e fiscal do seu escritório como extensão do seu time
+              — com metodologia própria e sistema integrado. Você entrega mais carteiras, com o mesmo padrão de qualidade
+              e menos estrutura interna.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-10">
+              <a
+                href="https://wa.me/message/7VFXJWAEUBGOE1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-emerald-500/25 transition-transform hover:scale-105"
+              >
+                <IconWhatsapp />
+                Falar com a WAC
+              </a>
+              <a
+                href="#pilares"
+                className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl transition-transform hover:scale-105"
+              >
+                Como funciona →
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500">
+              <span className="flex items-center gap-1.5"><IconCheck /> Sem contrato de fidelidade</span>
+              <span className="flex items-center gap-1.5"><IconCheck /> Onboarding personalizado</span>
+              <span className="flex items-center gap-1.5"><IconCheck /> Sistema LUCA incluído</span>
+            </div>
           </div>
         </div>
-      </nav>
+      </section>
 
-      {/* ════════════════════════════════════════════════════════════════ */}
-      {/* QUARTEIRIZACAO — primeira coisa que o visitante ve              */}
-      {/* ════════════════════════════════════════════════════════════════ */}
-      <section id="servicos" className="relative" style={{ zIndex: 2 }}>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-14 pb-8 md:pt-20 md:pb-10 text-center">
-          <p className="text-blue-300/60 text-sm font-bold uppercase tracking-[0.2em] mb-4">Quarteirização contábil e fiscal</p>
-          <p className="text-white/40 max-w-2xl mx-auto text-lg mb-8">
-            Apoio para a execução contábil e fiscal do seu escritório — 100% alinhada com sua forma de trabalhar, com metodologia própria e sistema integrado.
-          </p>
-          <a href="https://wa.me/message/7VFXJWAEUBGOE1" target="_blank" rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-green-500/20 mb-10">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp
-          </a>
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICOS.map((s, i) => (
-              <div key={i} className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-8 border border-white/[0.10] hover:bg-white/[0.12] hover:border-white/25 hover:-translate-y-1 transition-all duration-300">
-                <span className="text-5xl mb-5 block">{s.icon}</span>
-                <h3 className="font-bold text-white text-xl mb-3">{s.title}</h3>
-                <p className="text-sm text-white/45 leading-relaxed">{s.desc}</p>
+      {/* ═══ DOR + PROMESSA ═══ */}
+      <section className="border-y border-slate-100 bg-slate-50/50 py-14">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            {[
+              { n: 'Alto', l: 'Custo de folha interna pesando na margem' },
+              { n: 'Rotativo', l: 'Time saindo e método indo embora junto' },
+              { n: 'Espremido', l: 'Sem tempo pra crescer, pra vender, pra tocar o negócio' },
+            ].map((x, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                <p className="text-2xl md:text-3xl font-black text-rose-600 mb-1">{x.n}</p>
+                <p className="text-sm text-slate-600 leading-snug">{x.l}</p>
               </div>
             ))}
           </div>
+          <p className="text-center text-slate-500 mt-8 text-sm max-w-2xl mx-auto">
+            É pra escritórios que sentem essas 3 dores todo mês que a WAC existe.
+            A gente assume a operação e você recupera tempo, margem e ritmo.
+          </p>
         </div>
+      </section>
 
-        {/* KPIs */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {NUMEROS.map((n, i) => (
-              <div key={i} className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 text-center">
-                <p className="text-3xl md:text-4xl font-black text-white">{n.valor}</p>
-                <p className="text-xs text-white/40 mt-1 uppercase tracking-wider">{n.label}</p>
+      {/* ═══ PILARES: CONTÁBIL + FISCAL ═══ */}
+      <section id="pilares" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-widest font-bold text-blue-600">Dois pilares · Uma operação</span>
+            <h2 className="text-3xl md:text-4xl font-black mt-2 mb-3 text-slate-900">
+              A WAC assume Contábil e Fiscal com processo próprio.
+            </h2>
+            <p className="text-slate-600">
+              Cada setor com metodologia validada e sistema pra você acompanhar tudo em tempo real.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {PILARES.map(p => (
+              <div key={p.tag} className="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                <span className={`inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-bold px-2 py-0.5 rounded-full border ${p.tagCls}`}>
+                  {p.tag}
+                </span>
+                <h3 className="text-2xl font-black text-slate-900 mt-3 mb-2">{p.titulo}</h3>
+                <p className="text-sm text-slate-600 mb-5 leading-relaxed">{p.desc}</p>
+                <ul className="space-y-2">
+                  {p.itens.map((it, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════════════ */}
-      {/* LUCA — bloco unico                                             */}
-      {/* ════════════════════════════════════════════════════════════════ */}
-      <div id="luca" className="py-16 px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          {/* Titulo */}
-          <div className="text-center mb-14">
-            <p className="text-white/50 text-sm uppercase tracking-[0.3em] mb-4">Conheça o LUCA</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-5">
-              Seu escritório, nossa tecnologia.
+      {/* ═══ OTIMIZAÇÃO: 4 GANHOS ═══ */}
+      <section className="py-20 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-widest font-bold text-indigo-600">Otimização de processos</span>
+            <h2 className="text-3xl md:text-4xl font-black mt-2 mb-3 text-slate-900">
+              Escale sem crescer estrutura.
             </h2>
-            <p className="text-lg text-white/40 max-w-2xl mx-auto leading-relaxed">
-              O LUCA é o sistema próprio da WAC — feito por quem vive a rotina contábil todos os dias. Controle total, transparência para o cliente e gestão inteligente do escritório.
+            <p className="text-slate-600">
+              Quando você paga por entrega e não por presença, a matemática do escritório muda.
             </p>
           </div>
-
-          {/* ── ÁREA DO OPERADOR ─────────────────────────────────── */}
-          <div className="mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full">Área do Operador</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mt-4 mb-4">Controle pleno de cada carteira</h3>
-                <p className="text-white/40 leading-relaxed mb-6">O mesmo painel que a WAC usa no dia a dia. Todas as funcionalidades para operar com velocidade e precisão.</p>
-                <div className="space-y-3">
-                  {[
-                    { icon: '🎯', text: 'Painel Anual — status de cada empresa, mês a mês, com cores e filtros' },
-                    { icon: '📝', text: 'Evoluções — registro de cada ação com histórico completo' },
-                    { icon: '⚠️', text: 'Pendências — controle do que falta, com prazo e responsável' },
-                    { icon: '📑', text: 'Extratos — importação automática de extratos bancários (PDF)' },
-                    { icon: '💬', text: 'Particularidades — anotações por empresa com anexos' },
-                    { icon: '👤', text: 'Contatos — sócios, financeiro, responsáveis de cada empresa' },
-                  ].map((f, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <span className="text-lg shrink-0">{f.icon}</span>
-                      <p className="text-sm text-white/50">{f.text}</p>
-                    </div>
-                  ))}
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {OTIMIZACOES.map((o, i) => (
+              <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-indigo-400 hover:shadow-md transition-all">
+                <p className="text-xs font-black text-indigo-600 mb-2">0{i + 1}</p>
+                <h3 className="font-bold text-slate-900 mb-2">{o.titulo}</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">{o.desc}</p>
               </div>
-              {/* Mock visual — Painel Anual */}
-              <div className="bg-white/[0.03] rounded-2xl p-5 border border-white/[0.08]">
-                <div className="flex gap-2 mb-3">
-                  {['Painel Anual', 'Evoluções', 'Pendências', 'Extratos', 'Contato'].map((t, i) => (
-                    <span key={i} className={`text-[10px] px-2.5 py-1 rounded-lg ${i === 0 ? 'bg-white/10 text-white font-medium' : 'text-white/20'}`}>{t}</span>
-                  ))}
-                </div>
-                <div className="flex gap-2 mb-3">
-                  {['2025', '2026'].map((a, i) => (
-                    <span key={i} className={`text-[10px] px-3 py-1 rounded-lg font-bold ${i === 1 ? 'bg-white/15 text-white' : 'text-white/30'}`}>{a}</span>
-                  ))}
-                </div>
-                <div className="grid grid-cols-12 gap-1">
-                  {Array.from({ length: 96 }).map((_, i) => {
-                    const c = ['bg-green-500/60','bg-yellow-500/60','bg-purple-500/60','bg-pink-500/50','bg-white/[0.04]'];
-                    return <div key={i} className={`h-3.5 rounded-sm ${c[i%7===0?0:i%5===0?1:i%9===0?2:i%13===0?3:4]}`} />;
-                  })}
-                </div>
-                <div className="grid grid-cols-5 gap-2 mt-3">
-                  {[{l:'Zerado',v:'45',c:'text-green-400'},{l:'Lançado',v:'28',c:'text-yellow-400'},{l:'Fazendo',v:'12',c:'text-purple-400'},{l:'S/ Zeram.',v:'3',c:'text-pink-400'},{l:'Sem status',v:'8',c:'text-gray-400'}].map((k,i) => (
-                    <div key={i} className="bg-white/5 rounded-lg p-2 text-center">
-                      <p className="text-white/25 text-[8px] uppercase">{k.l}</p>
-                      <p className={`font-bold text-sm ${k.c}`}>{k.v}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ── ÁREA DO CONTADOR ──────────────────────────────────── */}
-          <div className="mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              {/* Mock visual — Portal do Contador */}
-              <div className="bg-white/[0.03] rounded-2xl p-5 border border-white/[0.08] order-2 lg:order-1">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-white font-black text-sm">Exemplo</span>
-                  <span className="text-blue-400 text-[9px] font-bold uppercase">Painel do Contador</span>
-                </div>
-                <div className="flex gap-2 mb-3">
-                  {['Resumo', 'Painel Anual', 'Pendências', 'Particularidades', 'DOCS →'].map((t, i) => (
-                    <span key={i} className={`text-[10px] px-2.5 py-1 rounded-lg ${i === 0 ? 'bg-white/10 text-white font-medium' : 'text-white/20'}`}>{t}</span>
-                  ))}
-                </div>
-                <div className="grid grid-cols-5 gap-2 mb-3">
-                  {[{l:'Total',v:'50',c:'text-white'},{l:'Zeradas',v:'7',c:'text-green-400'},{l:'Lançadas',v:'0',c:'text-yellow-400'},{l:'Fazendo',v:'5',c:'text-purple-400'},{l:'S/ Zeram.',v:'0',c:'text-pink-400'}].map((k,i) => (
-                    <div key={i} className="bg-white/5 rounded-lg p-2 text-center">
-                      <p className="text-white/25 text-[8px] uppercase">{k.l}</p>
-                      <p className={`font-bold text-sm ${k.c}`}>{k.v}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="bg-white/5 rounded-lg p-3">
-                  <p className="text-white/30 text-[9px] uppercase font-bold mb-2">Processo Operacional</p>
-                  <p className="text-white/20 text-[10px]">Como essa carteira é operada — contexto e passos do fluxo.</p>
-                </div>
-              </div>
-              <div className="order-1 lg:order-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full">Área do Contador</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mt-4 mb-4">Transparência total para o cliente</h3>
-                <p className="text-white/40 leading-relaxed mb-6">Seu cliente acompanha tudo em tempo real — sem precisar ligar ou esperar relatório. Cada carteira com acesso próprio e seguro.</p>
-                <div className="space-y-3">
-                  {[
-                    { icon: '📊', text: 'Resumo — KPIs da carteira com zeradas, lançadas e fazendo' },
-                    { icon: '🎯', text: 'Painel Anual — mesma visão do operador, read-only' },
-                    { icon: '⚠️', text: 'Pendências — vê o que está pendente sem precisar cobrar' },
-                    { icon: '📁', text: 'LUCA DOCS — acessa documentos organizados por setor' },
-                    { icon: '🔄', text: 'Processos — vê como a carteira é operada passo a passo' },
-                  ].map((f, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <span className="text-lg shrink-0">{f.icon}</span>
-                      <p className="text-sm text-white/50">{f.text}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ── ÁREA ADMINISTRATIVA ───────────────────────────────── */}
-          <div className="mb-14">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full">Área Administrativa</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mt-4 mb-4">Gestão completa do escritório</h3>
-                <p className="text-white/40 leading-relaxed mb-6">Portal separado com controle financeiro, comercial e operacional. Tudo o que o dono do escritório precisa para tomar decisões.</p>
-                <div className="space-y-3">
-                  {[
-                    { icon: '💰', text: 'Financeiro — honorários, custos rateados, margem por carteira e DRE' },
-                    { icon: '🎯', text: 'CRM — funil de vendas, leads, follow-ups e propostas automáticas' },
-                    { icon: '🧮', text: 'Orçamentos — simulador de honorários com custo, imposto e margem' },
-                    { icon: '📊', text: 'Resumo — composição de receita, lucro e carteiras com alerta' },
-                    { icon: '📋', text: 'Atividade — monitoramento diário de produtividade por colaborador' },
-                  ].map((f, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <span className="text-lg shrink-0">{f.icon}</span>
-                      <p className="text-sm text-white/50">{f.text}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {/* Mock visual — Administrativo */}
-              <div className="bg-white/[0.03] rounded-2xl p-5 border border-white/[0.08]">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-white font-bold text-sm">Painel Administrativo</span>
-                  <span className="text-[8px] bg-red-500/30 text-red-300 px-2 py-0.5 rounded-full font-bold uppercase">Restrito</span>
-                </div>
-                <div className="flex gap-1.5 mb-4 overflow-hidden">
-                  {['Resumo', 'Carteiras', 'Custos', 'DRE', 'Orçamento', 'CRM'].map((t, i) => (
-                    <span key={i} className={`text-[9px] px-2 py-1 rounded-lg shrink-0 ${i === 0 ? 'bg-white/10 text-white font-medium' : 'text-white/20'}`}>{t}</span>
-                  ))}
-                </div>
-                <div className="grid grid-cols-3 gap-2 mb-3">
-                  <div className="bg-green-500/10 rounded-lg p-2.5 text-center border border-green-500/20">
-                    <p className="text-green-400/60 text-[8px] uppercase">Receita</p>
-                    <p className="text-green-400 font-black text-sm">R$ 93k</p>
-                  </div>
-                  <div className="bg-red-500/10 rounded-lg p-2.5 text-center border border-red-500/20">
-                    <p className="text-red-400/60 text-[8px] uppercase">Custos</p>
-                    <p className="text-red-400 font-black text-sm">R$ 68k</p>
-                  </div>
-                  <div className="bg-blue-500/10 rounded-lg p-2.5 text-center border border-blue-500/20">
-                    <p className="text-blue-400/60 text-[8px] uppercase">Lucro</p>
-                    <p className="text-blue-400 font-black text-sm">R$ 25k</p>
-                  </div>
-                </div>
-                <div className="bg-white/5 rounded-lg p-3">
-                  <div className="h-3 rounded-full overflow-hidden flex mb-2">
-                    <div className="bg-orange-400 w-[55%]"></div>
-                    <div className="bg-amber-300 w-[15%]"></div>
-                    <div className="bg-red-400 w-[10%]"></div>
-                    <div className="bg-green-400 w-[20%]"></div>
-                  </div>
-                  <div className="flex gap-3 text-[8px] text-white/30">
-                    <span>Pessoal 55%</span><span>Despesas 15%</span><span>Imposto 10%</span><span>Lucro 20%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Frase de impacto */}
-          <div className="text-center py-10 border-t border-white/[0.06]">
-            <p className="text-xl md:text-2xl font-bold text-white/60 italic max-w-3xl mx-auto">
-              &ldquo;Um sistema feito por quem está na linha de frente da contabilidade todos os dias.&rdquo;
-            </p>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ════════════════════════════════════════════════════════════════ */}
-      {/* CTA                                                            */}
-      {/* ════════════════════════════════════════════════════════════════ */}
-      <div id="contato" className="py-24 px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <p className="text-blue-300/50 text-sm font-medium uppercase tracking-[0.3em] mb-4">Vamos conversar</p>
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-5">
-            Pronto para modernizar sua contabilidade?
+      {/* ═══ LUCA — o diferencial da WAC ═══ */}
+      <section id="luca" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-widest font-bold text-blue-600">Sistema próprio · incluído</span>
+            <h2 className="text-3xl md:text-4xl font-black mt-2 mb-3 text-slate-900">
+              LUCA — o sistema que faz a WAC funcionar.
+            </h2>
+            <p className="text-slate-600">
+              Nascido dentro da operação contábil, o LUCA é o mesmo painel que a equipe WAC usa todo dia.
+              Você acompanha cada empresa, cada mês, cada evolução — em tempo real.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+            {LUCA_FEATURES.map(f => (
+              <div key={f.titulo} className="bg-slate-50 border border-slate-200 rounded-xl p-5 hover:bg-white hover:border-blue-300 hover:shadow-md transition-all">
+                <h4 className="font-bold text-slate-900 mb-1.5">{f.titulo}</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="https://luca.wacapoio.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl transition-transform hover:scale-105"
+            >
+              Conheça o LUCA em detalhes
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ COMO FUNCIONA ═══ */}
+      <section className="py-20 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-widest font-bold text-indigo-600">Passo a passo</span>
+            <h2 className="text-3xl md:text-4xl font-black mt-2 mb-3 text-slate-900">
+              Como a WAC entra no seu escritório.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              { n: '01', titulo: 'Diagnóstico', desc: 'Conversa inicial pra entender volume, regime das empresas e o que trava hoje.' },
+              { n: '02', titulo: 'Piloto', desc: 'Assumimos 5–10 empresas pra rodar 1 mês. Você vê o método na prática, sem risco.' },
+              { n: '03', titulo: 'Onboarding', desc: 'Migração das demais empresas, treinamento do time e configuração no LUCA.' },
+              { n: '04', titulo: 'Escala', desc: 'Operação rodando com padrão WAC. Você acompanha tudo pelo sistema.' },
+            ].map(p => (
+              <div key={p.n} className="bg-white border border-slate-200 rounded-2xl p-6">
+                <p className="text-3xl font-black text-blue-600 mb-2">{p.n}</p>
+                <h4 className="font-black text-slate-900 mb-1.5">{p.titulo}</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ CTA ═══ */}
+      <section id="contato" className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4">
+            Pronto pra otimizar o seu escritório?
           </h2>
-          <p className="text-white/40 mb-10 text-lg max-w-xl mx-auto">
-            Entre em contato e descubra como a WAC + LUCA podem dar transparência e agilidade ao seu negócio.
+          <p className="text-slate-600 mb-10 text-lg max-w-xl mx-auto">
+            Fale com a WAC e descubra em quanto tempo você recupera folga na margem e no calendário.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a href="https://wa.me/message/7VFXJWAEUBGOE1" target="_blank" rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-lg shadow-green-500/20 flex items-center gap-2 text-lg">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <a
+              href="https://wa.me/message/7VFXJWAEUBGOE1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg shadow-emerald-500/20 text-lg transition-all hover:scale-105"
+            >
+              <IconWhatsapp />
               WhatsApp
             </a>
-            <a href="mailto:operacional@wacapoio.com.br"
-              className="bg-white/5 hover:bg-white/10 text-white px-8 py-4 rounded-2xl font-bold transition-all border border-white/10 text-lg">
+            <a
+              href="mailto:operacional@wacapoio.com.br"
+              className="inline-flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 px-8 py-4 rounded-2xl font-bold text-lg border border-slate-200 transition-colors"
+            >
               operacional@wacapoio.com.br
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ════════════════════════════════════════════════════════════════ */}
-      {/* FOOTER                                                         */}
-      {/* ════════════════════════════════════════════════════════════════ */}
-      <footer className="relative z-10 border-t border-white/[0.06] text-white/30 py-12 px-6">
+      {/* ═══ FOOTER ═══ */}
+      <footer className="border-t border-slate-100 bg-slate-50 py-10 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div />
-            <div className="flex gap-8 text-sm">
-              <a href="#servicos" className="hover:text-white transition-colors">Servicos</a>
-              <a href="https://luca.wacapoio.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LUCA</a>
-              <a href="#contato" className="hover:text-white transition-colors">Contato</a>
-              <a href="https://luca.wacapoio.com.br/login" className="hover:text-white transition-colors">Sistema</a>
+            <p className="text-xs text-slate-500">© 2026 WAC Apoio Contábil. Todos os direitos reservados.</p>
+            <div className="flex gap-6 text-sm text-slate-600">
+              <a href="#pilares" className="hover:text-slate-900">Serviços</a>
+              <a href="https://luca.wacapoio.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900">LUCA</a>
+              <a href="#contato" className="hover:text-slate-900">Contato</a>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="https://instagram.com/wacapoio" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900" title="Instagram">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
+              </a>
+              <a href="https://br.linkedin.com/company/wac-apoio" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900" title="LinkedIn">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+              </a>
             </div>
           </div>
-          {/* Redes sociais */}
-          <div className="flex items-center justify-center gap-5 mt-8">
-            <a href="https://instagram.com/wacapoio" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-colors">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              @wacapoio
-            </a>
-            <a href="https://br.linkedin.com/company/wac-apoio" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/40 hover:text-white transition-colors">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
-
-          <div className="border-t border-white/5 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs">&copy; 2026 WAC Apoio Contabil. Todos os direitos reservados.</p>
-            <p className="text-xs">Powered by <span className="text-blue-400/60 font-semibold">LUCA</span></p>
-          </div>
+          <p className="text-center text-[10px] text-slate-400 mt-6">
+            Powered by <a href="https://luca.wacapoio.com.br" className="text-blue-500 font-semibold hover:underline">LUCA</a>
+          </p>
         </div>
       </footer>
     </div>
+  );
+}
+
+// ─── Navbar navy com estrelas (mesma pegada do LUCA) ─────────────────
+function Navbar() {
+  const STARS: [number, number][] = [
+    [2, 30], [5, 70], [8, 45], [11, 20], [14, 80], [17, 55], [20, 15], [22, 85],
+    [26, 40], [29, 65], [32, 25], [35, 90], [38, 50], [41, 10], [44, 75], [47, 35],
+    [50, 60], [53, 20], [56, 85], [59, 45], [62, 70], [65, 15], [67, 55], [70, 80],
+    [73, 30], [75, 65], [78, 40], [81, 85], [83, 20], [86, 60], [88, 35], [90, 75],
+    [92, 50], [94, 15], [96, 70], [98, 40],
+  ];
+  const LINES: [number, number, number, number][] = [
+    [2, 30, 5, 70], [5, 70, 8, 45], [8, 45, 14, 80], [26, 40, 32, 25],
+    [32, 25, 38, 50], [53, 20, 59, 45], [62, 70, 67, 55], [73, 30, 78, 40],
+    [83, 20, 88, 35], [90, 75, 96, 70],
+  ];
+  return (
+    <header className="sticky top-0 z-40 shadow-lg relative overflow-hidden" style={{ background: '#0c1a3a' }}>
+      <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        {STARS.map(([x, y], i) => (
+          <circle key={`s${i}`} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 3) * 0.5} fill="white" opacity={0.12 + (i % 5) * 0.06} />
+        ))}
+        {LINES.map(([x1, y1, x2, y2], i) => (
+          <line key={`l${i}`} x1={`${x1}%`} y1={`${y1}%`} x2={`${x2}%`} y2={`${y2}%`} stroke="white" strokeWidth="0.5" opacity="0.06" />
+        ))}
+      </svg>
+      <div className="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between relative z-10">
+        <a href="#hero" className="flex items-center gap-3 group">
+          {/* Logo — placeholder texto pra ser leve; troca por Image real se quiser */}
+          <div className="flex flex-col leading-none">
+            <span className="text-[10px] text-blue-300/70 tracking-[0.3em] uppercase font-bold">WAC</span>
+            <span className="text-white text-2xl font-black tracking-tight group-hover:opacity-90 transition-opacity">Apoio Contábil</span>
+          </div>
+        </a>
+        <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
+          <a href="#pilares" className="text-slate-300 hover:text-white transition-colors">Serviços</a>
+          <a href="#luca" className="text-slate-300 hover:text-white transition-colors">LUCA</a>
+          <a href="#contato" className="text-slate-300 hover:text-white transition-colors">Contato</a>
+          <a
+            href="https://luca.wacapoio.com.br/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-5 py-2.5 rounded-lg shadow-md transition-transform hover:scale-105 flex items-center gap-2"
+          >
+            Acessar LUCA
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </nav>
+        <div className="md:hidden">
+          <a
+            href="https://luca.wacapoio.com.br/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-slate-900 text-xs font-bold px-3 py-1.5 rounded-lg"
+          >
+            LUCA
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function IconWhatsapp() {
+  return (
+    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  );
+}
+function IconCheck() {
+  return (
+    <svg className="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
   );
 }
