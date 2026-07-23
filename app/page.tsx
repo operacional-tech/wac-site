@@ -74,7 +74,7 @@ export default function Home() {
       <section id="hero" className="relative overflow-hidden">
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-blue-100 blur-3xl opacity-50 pointer-events-none" />
         <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-indigo-100 blur-3xl opacity-50 pointer-events-none" />
-        <div className="relative max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <div className="relative max-w-6xl mx-auto px-6 pt-6 md:pt-10 pb-16 md:pb-20">
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
