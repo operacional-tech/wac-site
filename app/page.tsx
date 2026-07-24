@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import Image from 'next/image';
 
 // ═══════════════════════════════════════════════════════════════════════
@@ -68,6 +69,9 @@ const LUCA_FEATURES = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      {/* ═══ TOP BAR — contato + localização (sempre visível) ═══ */}
+      <TopBar />
+
       {/* ═══ NAVBAR NAVY com estrelas — mesma pegada do LUCA ═══ */}
       <Navbar />
 
@@ -75,44 +79,57 @@ export default function Home() {
       <section id="hero" className="relative overflow-hidden">
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-blue-100 blur-3xl opacity-50 pointer-events-none" />
         <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full bg-indigo-100 blur-3xl opacity-50 pointer-events-none" />
-        <div className="relative max-w-6xl mx-auto px-6 pt-6 md:pt-10 pb-16 md:pb-20">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Quarteirização Contábil e Fiscal
-            </span>
-            <h1 className="text-4xl md:text-6xl font-black leading-[1.05] tracking-tight text-slate-900 mb-5">
-              Otimize processos e{' '}
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
-                reduza o custo do seu escritório contábil.
+        <div className="relative max-w-6xl mx-auto px-6 pt-8 md:pt-12 pb-16 md:pb-20">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Coluna texto */}
+            <div>
+              <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-4">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                Quarteirização Contábil e Fiscal · Itajaí, SC
               </span>
-            </h1>
-            <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed max-w-2xl">
-              A <strong>WAC</strong> assume a operação contábil e fiscal do seu escritório como extensão do seu time
-              — com metodologia própria e sistema integrado. Você entrega mais carteiras, com o mesmo padrão de qualidade
-              e menos estrutura interna.
-            </p>
-            <div className="flex flex-wrap gap-3 mb-10">
-              <a
-                href="https://wa.me/message/7VFXJWAEUBGOE1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-emerald-500/25 transition-transform hover:scale-105"
-              >
-                <IconWhatsapp />
-                Falar com a WAC
-              </a>
-              <a
-                href="#pilares"
-                className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl transition-transform hover:scale-105"
-              >
-                Como funciona →
-              </a>
+              <h1 className="text-3xl md:text-5xl xl:text-6xl font-black leading-[1.05] tracking-tight text-slate-900 mb-4">
+                Otimize processos e{' '}
+                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
+                  reduza o custo do seu escritório contábil.
+                </span>
+              </h1>
+              <p className="text-base md:text-lg text-slate-600 mb-4 leading-relaxed">
+                A <strong>WAC</strong> assume a operação contábil e fiscal do seu escritório como extensão do seu time
+                — com metodologia própria e sistema integrado. Você entrega mais carteiras, com o mesmo padrão de qualidade
+                e menos estrutura interna.
+              </p>
+              <p className="text-sm md:text-base text-slate-700 font-semibold mb-6 leading-relaxed">
+                Experiência em <span className="text-indigo-700">todos os regimes</span> — Simples Nacional, Lucro Presumido
+                e Lucro Real — e nas <span className="text-indigo-700">particularidades</span> de cada setor: contábil, fiscal,
+                societário e obrigações acessórias.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-6">
+                <a
+                  href="https://wa.me/message/7VFXJWAEUBGOE1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-emerald-500/25 transition-transform hover:scale-105"
+                >
+                  <IconWhatsapp />
+                  Falar com a WAC
+                </a>
+                <a
+                  href="#pilares"
+                  className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl transition-transform hover:scale-105"
+                >
+                  Como funciona →
+                </a>
+              </div>
+              <div className="flex flex-wrap gap-x-5 gap-y-1.5 text-xs md:text-sm text-slate-500">
+                <span className="flex items-center gap-1.5"><IconCheck /> Sem contrato de fidelidade</span>
+                <span className="flex items-center gap-1.5"><IconCheck /> Onboarding personalizado</span>
+                <span className="flex items-center gap-1.5"><IconCheck /> Sistema LUCA incluído</span>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500">
-              <span className="flex items-center gap-1.5"><IconCheck /> Sem contrato de fidelidade</span>
-              <span className="flex items-center gap-1.5"><IconCheck /> Onboarding personalizado</span>
-              <span className="flex items-center gap-1.5"><IconCheck /> Sistema LUCA incluído</span>
+
+            {/* Coluna mockup LUCA — visual do sistema */}
+            <div className="hidden lg:block">
+              <LucaMockup />
             </div>
           </div>
         </div>
@@ -362,9 +379,10 @@ function Navbar() {
 
       <div className="relative z-20 max-w-6xl mx-auto h-full px-8 flex items-center justify-between pointer-events-none">
         {/* Links esquerda */}
-        <nav className="hidden md:flex items-center gap-8 pointer-events-auto">
+        <nav className="hidden md:flex items-center gap-6 pointer-events-auto">
           <a href="#pilares" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">Serviços</a>
           <a href="#luca" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">LUCA</a>
+          <a href="#como-funciona" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">Como funciona</a>
           <a href="#contato" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">Contato</a>
         </nav>
 
@@ -402,5 +420,130 @@ function IconCheck() {
     <svg className="w-3.5 h-3.5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
     </svg>
+  );
+}
+
+// ─── Top bar de contato — sempre visível acima da navbar ────────────
+function TopBar() {
+  return (
+    <div className="text-white text-xs" style={{ background: '#081326' }}>
+      <div className="max-w-6xl mx-auto px-6 py-2 flex items-center justify-between flex-wrap gap-2">
+        <div className="flex items-center gap-5 text-slate-300">
+          <span className="inline-flex items-center gap-1.5">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Itajaí, Santa Catarina
+          </span>
+          <a href="mailto:operacional@wacapoio.com.br" className="hidden sm:inline-flex items-center gap-1.5 hover:text-white transition-colors">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            operacional@wacapoio.com.br
+          </a>
+        </div>
+        <div className="flex items-center gap-3">
+          <a href="https://wa.me/message/7VFXJWAEUBGOE1" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-3 py-1 rounded-md text-[11px] transition-colors">
+            <IconWhatsapp />
+            WhatsApp
+          </a>
+          <a href="https://instagram.com/wacapoio" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white" title="Instagram" aria-label="Instagram">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
+          </a>
+          <a href="https://br.linkedin.com/company/wac-apoio" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white" title="LinkedIn" aria-label="LinkedIn">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Mockup visual do LUCA no hero ──────────────────────────────────
+// CSS puro simulando o painel do LUCA — dá sensação de "sistema real"
+// sem depender de imagem/asset pesado.
+function LucaMockup() {
+  const EMPRESAS = ['ALPHA', 'BRAVO', 'DELTA', 'ECHO', 'FOX'];
+  const MESES = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
+  const palette = ['bg-emerald-500', 'bg-emerald-500', 'bg-blue-500', 'bg-emerald-500', 'bg-amber-500', 'bg-slate-300'];
+  const cel = (r: number, c: number) => palette[(r * 3 + c * 5) % palette.length];
+  return (
+    <div className="relative">
+      {/* Halo colorido atrás */}
+      <div className="absolute -inset-6 bg-gradient-to-br from-indigo-300/40 via-blue-200/40 to-cyan-200/40 rounded-[2rem] blur-2xl" />
+      <div className="relative bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+        {/* Barra estilo browser */}
+        <div className="h-7 flex items-center gap-1.5 px-3 border-b border-slate-100 bg-slate-50">
+          <div className="w-2 h-2 rounded-full bg-red-400" />
+          <div className="w-2 h-2 rounded-full bg-amber-400" />
+          <div className="w-2 h-2 rounded-full bg-emerald-400" />
+          <div className="ml-auto text-[9px] text-slate-400 font-bold tracking-widest uppercase">luca.wacapoio.com.br</div>
+        </div>
+        {/* Header navy */}
+        <div className="px-4 py-2.5 flex items-center justify-between" style={{ background: '#0c1a3a' }}>
+          <div className="flex items-center gap-2">
+            <span className="text-white text-[10px] font-black tracking-widest">LUCA</span>
+            <span className="text-slate-400 text-[9px]">·</span>
+            <span className="text-slate-300 text-[10px]">Painel do Escritório</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-emerald-300 text-[9px] font-bold uppercase">Ao vivo</span>
+          </div>
+        </div>
+        {/* KPIs */}
+        <div className="grid grid-cols-3 gap-2 p-3 bg-white">
+          <div className="bg-emerald-50 border border-emerald-200 rounded-lg px-2 py-1.5">
+            <p className="text-[7px] font-bold text-emerald-700 uppercase tracking-widest">Evoluções hoje</p>
+            <p className="text-base font-black text-slate-900">23</p>
+            <p className="text-[8px] text-emerald-600 font-semibold">▲ 4 vs ontem</p>
+          </div>
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg px-2 py-1.5">
+            <p className="text-[7px] font-bold text-indigo-700 uppercase tracking-widest">Tarefas abertas</p>
+            <p className="text-base font-black text-slate-900">47</p>
+            <p className="text-[8px] text-slate-500">12 hoje</p>
+          </div>
+          <div className="bg-rose-50 border border-rose-200 rounded-lg px-2 py-1.5">
+            <p className="text-[7px] font-bold text-rose-700 uppercase tracking-widest">Prazos semana</p>
+            <p className="text-base font-black text-slate-900">8</p>
+            <p className="text-[8px] text-rose-600 font-semibold">3 urgentes</p>
+          </div>
+        </div>
+        {/* Painel Anual mini */}
+        <div className="px-3 pb-3">
+          <p className="text-[8px] font-black text-slate-700 uppercase tracking-widest mb-1.5">
+            Painel Anual · Carteira ALPHA · 2026
+          </p>
+          <div className="grid gap-0.5" style={{ gridTemplateColumns: '38px repeat(12, 1fr)' }}>
+            <div />
+            {MESES.map((m, i) => (
+              <div key={i} className="text-[7px] text-slate-500 font-bold text-center uppercase">{m}</div>
+            ))}
+            {EMPRESAS.map((emp, r) => (
+              <React.Fragment key={emp}>
+                <div className="text-[8px] font-bold text-slate-700 flex items-center pr-1 truncate">{emp}</div>
+                {MESES.map((_, c) => <div key={c} className={`h-4 rounded ${cel(r, c)}`} />)}
+              </React.Fragment>
+            ))}
+          </div>
+          <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[8px]">
+            <div className="flex items-center gap-2 text-slate-600">
+              <span className="flex items-center gap-0.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />Entregue</span>
+              <span className="flex items-center gap-0.5"><span className="w-1.5 h-1.5 rounded-full bg-blue-500" />Solicitado</span>
+              <span className="flex items-center gap-0.5"><span className="w-1.5 h-1.5 rounded-full bg-amber-500" />Parcial</span>
+            </div>
+            <span className="text-emerald-700 font-bold">78% concluído</span>
+          </div>
+        </div>
+      </div>
+      {/* Selo flutuante "Sistema próprio da WAC" */}
+      <div className="absolute -bottom-3 -right-3 bg-white rounded-full shadow-lg border border-slate-200 px-3 py-1.5 flex items-center gap-1.5">
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest">Sistema próprio · WAC</span>
+      </div>
+    </div>
   );
 }
