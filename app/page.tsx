@@ -114,6 +114,14 @@ export default function Home() {
                   Falar com a WAC
                 </a>
                 <a
+                  href="https://luca.wacapoio.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-indigo-500/25 transition-transform hover:scale-105"
+                >
+                  Conheça o LUCA →
+                </a>
+                <a
                   href="#pilares"
                   className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl transition-transform hover:scale-105"
                 >
