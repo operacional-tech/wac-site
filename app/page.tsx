@@ -85,18 +85,15 @@ export default function Home() {
             <div>
               <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-4">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                Quarteirização Contábil e Fiscal · Itajaí, SC
+                Apoio e Quarteirização Contábil e Fiscal <span className="text-slate-400">·</span> para contabilidades <span className="text-slate-400">·</span> Itajaí/SC
               </span>
               <h1 className="text-3xl md:text-5xl xl:text-6xl font-black leading-[1.05] tracking-tight text-slate-900 mb-4">
-                Otimize processos e{' '}
-                <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">
-                  reduza o custo do seu escritório contábil.
-                </span>
+                Apoio e quarteirização <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">contábil e fiscal para o seu escritório de contabilidade.</span>
               </h1>
               <p className="text-base md:text-lg text-slate-600 mb-4 leading-relaxed">
-                A <strong>WAC</strong> assume a operação contábil e fiscal do seu escritório como extensão do seu time
-                — com metodologia própria e sistema integrado. Você entrega mais carteiras, com o mesmo padrão de qualidade
-                e menos estrutura interna.
+                A <strong>WAC</strong> assume a operação contábil e fiscal como extensão do seu time — com metodologia
+                própria e sistema integrado. Seu escritório entrega mais carteiras, com o mesmo padrão de qualidade,
+                sem inflar a estrutura interna.
               </p>
               <p className="text-sm md:text-base text-slate-700 font-semibold mb-6 leading-relaxed">
                 Experiência em <span className="text-indigo-700">todos os regimes</span> — Simples Nacional, Lucro Presumido
