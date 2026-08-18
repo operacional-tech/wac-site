@@ -32,13 +32,17 @@ export const metadata: Metadata = {
   category: 'Serviços contábeis',
   // Favicon PNG (JPG não é servido como image/x-icon pelo Google e some do
   // resultado de busca). Mantemos o JPG como fallback antigo.
+  // Google prefere favicon >= 48px (múltiplo de 48) pra mostrar no resultado
+  // de busca. Servimos os dois tamanhos com sizes explícito — sem isso o
+  // crawler assume 16px e descarta a imagem do "favicon rico".
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/logo-wac.png', type: 'image/png' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/logo-wac.png', type: 'image/png', sizes: '512x512' },
     ],
-    apple: [{ url: '/logo-wac.png' }],
-    shortcut: '/logo-wac.png',
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    shortcut: '/favicon.ico',
   },
   openGraph: {
     type: 'website',
