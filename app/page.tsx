@@ -83,9 +83,9 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Coluna texto */}
             <div>
-              <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-4">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                Apoio e Quarteirização Contábil e Fiscal <span className="text-slate-400">·</span> para contabilidades <span className="text-slate-400">·</span> Itajaí/SC
+              <span className="inline-flex items-baseline gap-2 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-4">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0 translate-y-[1px]" />
+                <span>Apoio e Quarteirização Contábil e Fiscal para contabilidades</span>
               </span>
               <h1 className="text-3xl md:text-5xl xl:text-6xl font-black leading-[1.05] tracking-tight text-slate-900 mb-4">
                 Apoio e quarteirização <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">contábil e fiscal para o seu escritório de contabilidade.</span>
