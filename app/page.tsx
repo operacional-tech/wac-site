@@ -88,7 +88,7 @@ export default function Home() {
                 <span>Apoio e Quarteirização Contábil e Fiscal para contabilidades</span>
               </span>
               <h1 className="text-3xl md:text-5xl xl:text-6xl font-black leading-[1.05] tracking-tight text-slate-900 mb-4">
-                Apoio e quarteirização <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">contábil e fiscal para o seu escritório de contabilidade.</span>
+                Quarteirização <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">Contábil e Fiscal para Contabilidades.</span>
               </h1>
               <p className="text-base md:text-lg text-slate-600 mb-4 leading-relaxed">
                 A <strong>WAC</strong> assume a operação contábil e fiscal como extensão do seu time — com metodologia
