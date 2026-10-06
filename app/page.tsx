@@ -36,6 +36,19 @@ const PILARES = [
       'Metodologia 7em7 pra fechar no dia certo',
     ],
   },
+  {
+    tag: 'Dep. Pessoal',
+    tagCls: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    titulo: 'Departamento Pessoal',
+    desc: 'Folha, admissões, rescisões, férias, 13º e obrigações trabalhistas — eSocial em dia, sem dor pro seu cliente nem pro seu time.',
+    itens: [
+      'Folha mensal + holerites',
+      'Admissões, rescisões, férias e 13º',
+      'eSocial · DCTFWeb · FGTS Digital',
+      'Benefícios, pró-labore e sócios',
+      'Atendimento ao RH do seu cliente',
+    ],
+  },
 ];
 
 const OTIMIZACOES = [
@@ -85,20 +98,20 @@ export default function Home() {
             <div>
               <span className="inline-flex items-baseline gap-2 text-[11px] uppercase tracking-widest font-bold text-slate-500 mb-4">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse flex-shrink-0 translate-y-[1px]" />
-                <span>Apoio e Quarteirização Contábil e Fiscal para contabilidades</span>
+                <span>Quarteirização para Contabilidade — Contábil, Fiscal e Departamento Pessoal</span>
               </span>
               <h1 className="text-3xl md:text-5xl xl:text-6xl font-black leading-[1.05] tracking-tight text-slate-900 mb-4">
-                Quarteirização <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">Contábil e Fiscal para Contabilidades.</span>
+                Quarteirização para Contabilidade <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 bg-clip-text text-transparent">— Contábil, Fiscal e Departamento Pessoal.</span>
               </h1>
               <p className="text-base md:text-lg text-slate-600 mb-4 leading-relaxed">
-                A <strong>WAC</strong> assume a operação contábil e fiscal como extensão do seu time — com metodologia
-                própria e sistema integrado. Seu escritório entrega mais carteiras, com o mesmo padrão de qualidade,
-                sem inflar a estrutura interna.
+                A <strong>WAC</strong> assume as operações <strong>contábil, fiscal e de departamento pessoal</strong> como extensão
+                do seu time — com metodologia própria e sistema integrado. Seu escritório entrega mais carteiras, com o mesmo
+                padrão de qualidade, sem inflar a estrutura interna.
               </p>
               <p className="text-sm md:text-base text-slate-700 font-semibold mb-6 leading-relaxed">
                 Experiência em <span className="text-indigo-700">todos os regimes</span> — Simples Nacional, Lucro Presumido
-                e Lucro Real — e nas <span className="text-indigo-700">particularidades</span> de cada setor: contábil, fiscal,
-                societário e obrigações acessórias.
+                e Lucro Real — e em cada frente: <span className="text-indigo-700">contábil, fiscal, folha / eSocial,
+                societário</span> e obrigações acessórias.
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 <a
@@ -168,7 +181,7 @@ export default function Home() {
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <span className="text-xs uppercase tracking-widest font-bold text-blue-600">Dois pilares · Uma operação</span>
             <h2 className="text-3xl md:text-4xl font-black mt-2 mb-3 text-slate-900">
-              A WAC assume Contábil e Fiscal com processo próprio.
+              A WAC assume Contábil, Fiscal e Departamento Pessoal com processo próprio.
             </h2>
             <p className="text-slate-600">
               Cada setor com metodologia validada e sistema pra você acompanhar tudo em tempo real.
@@ -357,7 +370,7 @@ function Navbar() {
     [83, 20, 88, 35], [90, 75, 96, 70],
   ];
   return (
-    <header className="sticky top-0 z-40 shadow-lg relative overflow-hidden" style={{ background: '#0c1a3a', height: '100px' }}>
+    <header className="sticky top-0 z-40 shadow-lg relative overflow-hidden h-[72px] md:h-[100px]" style={{ background: '#0c1a3a' }}>
       <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         {STARS.map(([x, y], i) => (
           <circle key={`s${i}`} cx={`${x}%`} cy={`${y}%`} r={0.8 + (i % 3) * 0.5} fill="white" opacity={0.12 + (i % 5) * 0.06} />
@@ -367,7 +380,8 @@ function Navbar() {
         ))}
       </svg>
 
-      {/* Logo original centralizado com mask radial (fusão com o navy) */}
+      {/* Logo original centralizado com mask radial (fusão com o navy).
+          Mobile usa width menor pra não brigar com o CTA à direita. */}
       <a href="#hero" className="absolute inset-0 flex items-center justify-center z-10" aria-label="WAC — início">
         <Image
           src="/logo-wac.jpg"
@@ -375,6 +389,8 @@ function Navbar() {
           width={160}
           height={160}
           priority
+          sizes="(max-width: 767px) 110px, 160px"
+          className="w-[110px] h-[110px] md:w-[160px] md:h-[160px]"
           style={{
             mask: 'radial-gradient(circle at center, black 20%, transparent 65%)',
             WebkitMask: 'radial-gradient(circle at center, black 20%, transparent 65%)',
@@ -382,11 +398,11 @@ function Navbar() {
         />
       </a>
 
-      <div className="relative z-20 max-w-6xl mx-auto h-full px-8 flex items-center justify-between pointer-events-none">
+      <div className="relative z-20 max-w-6xl mx-auto h-full px-3 md:px-8 flex items-center justify-between pointer-events-none">
         {/* Links esquerda */}
         <nav className="hidden md:flex items-center gap-6 pointer-events-auto">
           <a href="#pilares" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">Serviços</a>
-          <a href="#luca" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">LUCA</a>
+          <a href="https://luca.wacapoio.com.br" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">LUCA</a>
           <a href="#como-funciona" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">Como funciona</a>
           <a href="#contato" className="text-slate-300 hover:text-white text-sm font-semibold transition-colors">Contato</a>
         </nav>
@@ -394,16 +410,16 @@ function Navbar() {
         {/* Placeholder pro centro (não empurra o logo) */}
         <div className="hidden md:block" />
 
-        {/* CTA direita */}
+        {/* CTA direita — compacto no mobile pra não encostar na logo */}
         <div className="ml-auto pointer-events-auto">
           <a
             href="https://luca.wacapoio.com.br/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-5 py-2.5 rounded-lg shadow-md transition-transform hover:scale-105 inline-flex items-center gap-2 text-sm"
+            className="bg-white text-slate-900 hover:bg-slate-100 font-bold rounded-lg shadow-md transition-transform hover:scale-105 inline-flex items-center gap-1.5 md:gap-2 px-2.5 md:px-5 py-1.5 md:py-2.5 text-xs md:text-sm"
           >
-            Acessar LUCA
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <span className="hidden sm:inline">Acessar </span>LUCA
+            <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>

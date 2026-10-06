@@ -12,17 +12,19 @@ const SITE_URL = 'https://wacapoio.com.br';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "WAC Apoio Contábil | Quarteirização Contábil e Fiscal para Contabilidades",
+    default: "WAC Apoio Contábil | Quarteirização para Contabilidade — Contábil, Fiscal e Departamento Pessoal",
     template: "%s | WAC Apoio Contábil",
   },
   description:
-    "Apoio e quarteirização contábil e fiscal para escritórios de contabilidade. A WAC assume a operação como extensão do seu time — Simples, Presumido, Lucro Real, folha e societário — com o sistema LUCA para controle em tempo real. Itajaí/SC, atendemos todo o Brasil.",
+    "Quarteirização para contabilidade: contábil, fiscal e departamento pessoal como extensão do seu time. A WAC assume a operação com metodologia própria e o sistema LUCA — Simples, Presumido, Lucro Real, folha e eSocial. Itajaí/SC, atendemos todo o Brasil.",
   keywords: [
+    'quarteirização para contabilidade',
     'quarteirização contábil',
     'quarteirização fiscal',
-    'apoio contábil para contabilidades',
-    'BPO contábil',
-    'terceirização contábil',
+    'quarteirização departamento pessoal',
+    'BPO contábil fiscal e DP',
+    'apoio contábil fiscal e trabalhista',
+    'terceirização de folha e eSocial',
     'escritório contábil Itajaí',
     'WAC Apoio Contábil',
     'sistema LUCA',
@@ -49,9 +51,9 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: 'WAC Apoio Contábil',
     locale: 'pt_BR',
-    title: 'WAC Apoio Contábil | Quarteirização Contábil e Fiscal para Contabilidades',
+    title: 'WAC Apoio Contábil | Quarteirização para Contabilidade — Contábil, Fiscal e Departamento Pessoal',
     description:
-      'Apoio e quarteirização contábil e fiscal para escritórios de contabilidade. Assumimos sua operação com o sistema LUCA — Simples, Presumido, Real, folha e societário.',
+      'Quarteirização para contabilidade — Contábil, Fiscal e Departamento Pessoal como extensão do seu time, com o sistema LUCA.',
     images: [
       {
         url: '/logo-wac.png',
@@ -63,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WAC Apoio Contábil | Quarteirização Contábil e Fiscal para Contabilidades',
+    title: 'WAC Apoio Contábil | Quarteirização para Contabilidade — Contábil, Fiscal e Departamento Pessoal',
     description:
-      'Apoio e quarteirização contábil e fiscal para escritórios de contabilidade, com o sistema LUCA.',
+      'Quarteirização para contabilidade — Contábil, Fiscal e Departamento Pessoal, com o sistema LUCA.',
     images: ['/logo-wac.png'],
   },
   robots: {
@@ -90,7 +92,7 @@ const ORG_JSONLD = {
   logo: `${SITE_URL}/logo-wac.png`,
   image: `${SITE_URL}/logo-wac.png`,
   description:
-    'Apoio e quarteirização contábil e fiscal para escritórios de contabilidade. Atendemos Simples Nacional, Lucro Presumido, Lucro Real, folha e obrigações acessórias, com o sistema LUCA.',
+    'Quarteirização para contabilidade — Contábil, Fiscal e Departamento Pessoal como extensão do seu time. Atendemos Simples Nacional, Lucro Presumido, Lucro Real, folha, eSocial e obrigações acessórias, com o sistema LUCA.',
   areaServed: 'BR',
   address: {
     '@type': 'PostalAddress',
