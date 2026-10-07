@@ -12,7 +12,7 @@ const SITE_URL = 'https://wacapoio.com.br';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "WAC Apoio Contábil | Quarteirização para Contabilidade — Contábil, Fiscal e Departamento Pessoal",
+    default: "WAC Apoio Contábil | Quarteirização para Contabilidade · Contábil, Fiscal e Departamento Pessoal",
     template: "%s | WAC Apoio Contábil",
   },
   description:
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: 'WAC Apoio Contábil',
     locale: 'pt_BR',
-    title: 'WAC Apoio Contábil | Quarteirização para Contabilidade — Contábil, Fiscal e Departamento Pessoal',
+    title: 'WAC Apoio Contábil | Quarteirização para Contabilidade · Contábil, Fiscal e Departamento Pessoal',
     description:
       'Quarteirização para contabilidade — Contábil, Fiscal e Departamento Pessoal como extensão do seu time, com o sistema LUCA.',
     images: [
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WAC Apoio Contábil | Quarteirização para Contabilidade — Contábil, Fiscal e Departamento Pessoal',
+    title: 'WAC Apoio Contábil | Quarteirização para Contabilidade · Contábil, Fiscal e Departamento Pessoal',
     description:
       'Quarteirização para contabilidade — Contábil, Fiscal e Departamento Pessoal, com o sistema LUCA.',
     images: ['/logo-wac.png'],
